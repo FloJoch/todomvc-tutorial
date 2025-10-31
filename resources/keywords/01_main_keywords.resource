@@ -45,7 +45,7 @@ Todos Als Erledigt Markieren
 
 Todos Löschen
     [Documentation]    Löscht alle angelegten Todos, Argumente für erledigt ja oder nein
-    [Arguments]    ${status}=erledigt    ${expected_remaining}=0
+    [Arguments]    ${status}=erledigt    ${expected_remaining}=$
     IF    '${status}' == 'erledigt'
         WHILE    ${True}
             ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
