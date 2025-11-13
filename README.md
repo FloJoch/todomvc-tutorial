@@ -1,1 +1,146 @@
-# todomvc-tutorial
+# Von Klick zu Keyword: Einführung in automatisiertes Testen mit Robot Framework
+_Aus manuellen Schritten werden lauffähige Suites._
+
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
+[![Robot Framework](https://img.shields.io/badge/Robot%20Framework-✔-blue.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](#license)
+
+---
+
+## TL;DR
+- **Was?** Mini-Demo/Tutorial: Manuelle Testfälle → Robot-Tests (TodoMVC).
+- **Dauer:** ~15–30 Minuten (je nach Tiefe).
+- **Für wen?** Einsteiger & Praktiker, die manuelle Tests zügig automatisieren wollen.
+- **Repo-Ziel:** Klare Struktur, kurze Selektoren, reproduzierbare Läufe (lokal & CI).
+
+---
+
+## Inhalt
+- [Robot Framework – Kurzüberblick](#robot-framework--kurzüberblick)
+- [Robot Framework Foundation – Kurzüberblick](#robot-framework-foundation--kurzüberblick)
+- [Demo-Setup (TodoMVC)](#demo-setup-todomvc)
+- [Manuelle Testfälle (Jira-Darstellung)](#manuelle-testfälle-jira-darstellung)
+- [Vom manuellen Test zu Robot-Schritten](#vom-manuellen-test-zu-robot-schritten)
+- [Selektor-Strategie & Stabilität](#selektor-strategie--stabilität)
+- [Projektstruktur](#projektstruktur)
+- [Ausführen](#ausführen)
+- [Erweiterungen: Suite Hooks, Tags, Reports](#erweiterungen-suite-hooks-tags-reports)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [Links & Ressourcen](#links--ressourcen)
+- [License](#license)
+
+---
+
+## Robot Framework – Kurzüberblick
+- **Open Source** Testautomatisierungs-Framework für **akzeptanznahe** und **E2E**-Tests.  
+- **Schlüsselideen:** Keyword-Driven, lesbare Syntax, erweiterbar (Bibliotheken, Python/Java).  
+- **Typische Use-Cases:** Web-UI (Playwright/Browser), APIs, CLI, Datenpipelines, RPA.  
+- **Stärken:** Lesbarkeit, Wiederverwendung, Tooling (Reports/Logs), Ökosystem.
+
+> **Merksatz:** „Natürlich beschriebene Schritte werden zu **Keywords** – ausführbar, versionierbar, wartbar.“
+
+---
+
+## Robot Framework Foundation – Kurzüberblick
+- **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
+- **Rolle:** Governance, Events, Konferenzen, Förderprogramme, Zertifizierung/Brand.  
+- **Community-getrieben:** Beiträge aus Firmen & Open-Source-Projekten.  
+- **Transparenz:** Offene Roadmaps, offene Entwicklung.
+
+> **Open Source, non-profit, community-driven.**  
+> _Hinweis: Ersetze ggf. die Links unten durch eure bevorzugten Quellen._
+
+---
+
+## Demo-Setup (TodoMVC)
+- **Testobjekt:** TodoMVC (VanillaJS-Variante).  
+- **Ziele:**  
+  1. **Anlegen** eines Todos  
+  2. **Löschen** eines Todos  
+  3. **Als erledigt markieren**  
+  4. **Filtern** (Active/Completed)
+
+> **Zeitbox Vorschlag:** 15 Minuten live, +5 Minuten Q&A.
+
+---
+
+## Manuelle Testfälle (Jira-Darstellung)
+> **Platzhalter für drei Bilder** (Jira-Screenshots eurer manuellen Testfälle).  
+> Lege die Dateien z. B. nach `docs/img/`.
+
+- **TC1 – Todo anlegen**  
+  ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
+
+- **TC2 – Todo löschen**  
+  ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
+
+- **TC3 – Als erledigt markieren**  
+  ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
+
+> Optional viertes Bild (Filtern): `docs/img/tc4_jira.png`
+
+---
+
+## Vom manuellen Test zu Robot-Schritten
+| Manuell (Given/When/Then) | Robot-Schritt (Keyword) |
+| --- | --- |
+| **Given**: App ist geöffnet | `New Browser` → `New Context` → `New Page    ${BASE_URL}` |
+| **When**: „Kaffee kaufen“ eingeben + Enter | `Fill Text    ${INPUT}    Kaffee kaufen` / `Press Keys    ${INPUT}    Enter` |
+| **Then**: 1 neuer Eintrag sichtbar | `Get Count    ${LIST_ITEMS}    ==    1` |
+
+**Beispiel-Suite (Minimalfassung):**
+```robot
+*** Settings ***
+Library           Browser
+Suite Setup       Open App
+Suite Teardown    Close Browser
+
+*** Variables ***
+${BASE_URL}          https://todomvc.com/examples/vanillajs/
+${INPUT}             css=input.new-todo
+${LIST_ITEMS}        css=.todo-list li
+${TOGGLE}            css=.toggle
+${DESTROY_BTN}       css=button.destroy
+${FILTER_ACTIVE}     text=Active
+${FILTER_COMPLETED}  text=Completed
+${FILTER_ALL}        text=All
+
+*** Keywords ***
+Open App
+    New Browser    headless=${TRUE}
+    New Context
+    New Page    ${BASE_URL}
+
+*** Test Cases ***
+TC1 Todo anlegen
+    Fill Text    ${INPUT}    Kaffee kaufen
+    Press Keys   ${INPUT}    Enter
+    Get Count    ${LIST_ITEMS}    ==    1
+
+TC2 Todo löschen
+    Fill Text    ${INPUT}    Milch kaufen
+    Press Keys   ${INPUT}    Enter
+    Hover        ${LIST_ITEMS} >> nth=0
+    Click        ${DESTROY_BTN}
+    # Erwartung: kein "Milch kaufen" mehr in der Liste
+    Get Count    ${LIST_ITEMS}    ==    1
+
+TC3 Todo als erledigt markieren
+    Fill Text    ${INPUT}    Brot kaufen
+    Press Keys   ${INPUT}    Enter
+    Click        ${LIST_ITEMS} >> nth=0 >> ${TOGGLE}
+    Locator Should Have Attribute    ${LIST_ITEMS} >> nth=0    class    .*completed.*
+
+TC4 Filtern Active/Completed
+    Fill Text    ${INPUT}    Offen
+    Press Keys   ${INPUT}    Enter
+    Fill Text    ${INPUT}    Erledigt
+    Press Keys   ${INPUT}    Enter
+    Click        ${LIST_ITEMS} >> nth=1 >> ${TOGGLE}
+    Click        ${FILTER_ACTIVE}
+    Get Count    ${LIST_ITEMS}    ==    1
+    Click        ${FILTER_COMPLETED}
+    Get Count    ${LIST_ITEMS}    ==    1
+    Click        ${FILTER_ALL}
+    Get Count    ${LIST_ITEMS}    ==    2
