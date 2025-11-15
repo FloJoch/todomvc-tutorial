@@ -45,20 +45,18 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
 - **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
 - **URL:** https://robotframework.org/foundation/
-- BILD
+- ![foundation-qr-code](resources\config\images\qr-code.png)
 
 
 ---
 
 ## Demo-Setup (TodoMVC)
-- **Testobjekt:** TodoMVC (VanillaJS-Variante).  
-- **Ziele:**  
-  1. **Anlegen** eines Todos  
-  2. **Löschen** eines Todos  
-  3. **Als erledigt markieren**  
-  4. **Filtern** (Active/Completed)
+- **Testobjekt:** TodoMVC: https://todomvc.com/examples/vue/dist/#/
+- **Ziel-Testfälle:**  
+  1. **TID-1: Anlegen** eines Todos  
+  2. **TID-2: Erledigen** eines Todos  
+  3. **TID-3: Löschen** eines Todos 
 
-> **Zeitbox Vorschlag:** 15 Minuten live, +5 Minuten Q&A.
 
 ---
 
