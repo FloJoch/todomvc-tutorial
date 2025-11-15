@@ -15,6 +15,7 @@ Starte ToDoMVC
     Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
 
 # --- User-Keywords ---
+
 Todos Anlegen
     [Documentation]    Legt beliebig viele Todos an.
     [Arguments]    @{todo_liste}
@@ -28,9 +29,11 @@ Vorhandene Todos
     [Arguments]    ${erwartete_anzahl}
     ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
     Log To Console    Vorhandene Todos: ${anzahl_todos}
-    Should Be Equal As Integers    ${anzahl_todos}    ${erwartete_anzahl}    msg=Erwartete Anzahl der Todos stimmt nicht
+    Should Be Equal As Integers
+    ...    ${anzahl_todos}
+    ...    ${erwartete_anzahl}
+    ...    msg=Erwartete Anzahl der Todos stimmt nicht
 
-    
 Todos Als Erledigt Markieren
     [Documentation]    Markiert alle übergebenen Todos als erledigt
     [Arguments]    @{todo_liste}
@@ -56,10 +59,10 @@ Todos Löschen
     ...    '${status}'=='alle'    ${TODO_ITEM}
 
     WHILE    True
-        ${count}=    Get Element Count    ${selector}
+        ${count}    Get Element Count    ${selector}
         IF    ${count} == 0    BREAK
         Hover    ${selector} >> nth=0
         Click    ${selector} >> nth=0 >> ${BTN_TODO_LÖSCHEN}
     END
-    ${remaining}=    Get Element Count    ${TODO_ITEM}
+    ${remaining}    Get Element Count    ${TODO_ITEM}
     Log To Console    Verbleibende Todos (gesamt): ${remaining}

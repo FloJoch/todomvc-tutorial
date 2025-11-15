@@ -1,17 +1,18 @@
-# Von Klick zu Keyword: Einführung in automatisiertes Testen mit Robot Framework
+# Vom Klick zum Keyword: Einführung in automatisiertes Testen mit Robot Framework
 _Aus manuellen Schritten werden lauffähige Suites._
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-[![Robot Framework](https://img.shields.io/badge/Robot%20Framework-✔-blue.svg)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](#license)
+
+---
+
+## Libraries
+- **BuiltIn-Library** https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+- **Browser-Library** https://marketsquare.github.io/robotframework-browser/Browser.html
 
 ---
 
 ## TL;DR
-- **Was?** Mini-Demo/Tutorial: Manuelle Testfälle → Robot-Tests (TodoMVC).
-- **Dauer:** ~15–30 Minuten (je nach Tiefe).
+- **Was?** Mini-Demo: Manuelle Testfälle → Robot-Tests (TodoMVC).
 - **Für wen?** Einsteiger & Praktiker, die manuelle Tests zügig automatisieren wollen.
-- **Repo-Ziel:** Klare Struktur, kurze Selektoren, reproduzierbare Läufe (lokal & CI).
 
 ---
 
@@ -33,23 +34,19 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ---
 
 ## Robot Framework – Kurzüberblick
-- **Open Source** Testautomatisierungs-Framework für **akzeptanznahe** und **E2E**-Tests.  
-- **Schlüsselideen:** Keyword-Driven, lesbare Syntax, erweiterbar (Bibliotheken, Python/Java).  
-- **Typische Use-Cases:** Web-UI (Playwright/Browser), APIs, CLI, Datenpipelines, RPA.  
-- **Stärken:** Lesbarkeit, Wiederverwendung, Tooling (Reports/Logs), Ökosystem.
-
-> **Merksatz:** „Natürlich beschriebene Schritte werden zu **Keywords** – ausführbar, versionierbar, wartbar.“
+- **Open Source**: Testautomatisierungs-Framework unter anderem **Akkzeptanztests**, **Systemtests** und **E2E-Tests**.
+- **Anwendungsbereiche**: Testautomatisierung und Robotic Process Automation  
+- **Spezifikationsstyle** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
+- **Stärken:** Lesbarkeit, Wiederverwendung, Sehr aktive Community, leichter Einstieg für Nutzer ohne viel Entwicklungserfahrung
 
 ---
 
 ## Robot Framework Foundation – Kurzüberblick
 - **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
-- **Rolle:** Governance, Events, Konferenzen, Förderprogramme, Zertifizierung/Brand.  
-- **Community-getrieben:** Beiträge aus Firmen & Open-Source-Projekten.  
-- **Transparenz:** Offene Roadmaps, offene Entwicklung.
+- **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
+- **URL:** https://robotframework.org/foundation/
+- BILD
 
-> **Open Source, non-profit, community-driven.**  
-> _Hinweis: Ersetze ggf. die Links unten durch eure bevorzugten Quellen._
 
 ---
 
