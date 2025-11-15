@@ -37,4 +37,3 @@ TID-003: Erledigte Todos löschen
     Vorhandene Todos
 
     Take Screenshot
-

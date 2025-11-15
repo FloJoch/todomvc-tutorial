@@ -15,5 +15,3 @@ ${TODO_ITEM_ERLEDIGT}           ul.todo-list li:has(input.toggle:checked)
 ${TODO_ITEM_NICHT_ERLEDIGT}     ul.todo-list li:has(input.toggle:not(:checked))
 
 ${BTN_TODO_LÖSCHEN}             .destroy
-
-

@@ -44,8 +44,9 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ## Robot Framework Foundation – Kurzüberblick
 - **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
 - **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
-- **URL:** https://robotframework.org/foundation/
-- ![foundation-qr-code](resources\config\images\qr-code.png)
+- **Weitere Infos:** https://robotframework.org/foundation/
+  
+  ![foundation-qr-code](resources\config\images\qr-code.png)
 
 
 ---
@@ -53,7 +54,7 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ## Demo-Setup (TodoMVC)
 - **Testobjekt:** 
   - TodoMVC: https://todomvc.com/examples/vue/dist/#/
-  
+
 - **Ziel-Testfälle:**  
   1. **TID-1: Anlegen** eines Todos  
   2. **TID-2: Erledigen** eines Todos  
@@ -63,9 +64,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ---
 
 ## Manuelle Testfälle (Jira-Darstellung)
-> **Platzhalter für drei Bilder** (Jira-Screenshots eurer manuellen Testfälle).  
-> Lege die Dateien z. B. nach `docs/img/`.
-
 - **TC1 – Todo anlegen**  
   ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
 
@@ -75,69 +73,120 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **TC3 – Als erledigt markieren**  
   ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
 
-> Optional viertes Bild (Filtern): `docs/img/tc4_jira.png`
-
 ---
-
-## Vom manuellen Test zu Robot-Schritten
-| Manuell (Given/When/Then) | Robot-Schritt (Keyword) |
-| --- | --- |
-| **Given**: App ist geöffnet | `New Browser` → `New Context` → `New Page    ${BASE_URL}` |
-| **When**: „Kaffee kaufen“ eingeben + Enter | `Fill Text    ${INPUT}    Kaffee kaufen` / `Press Keys    ${INPUT}    Enter` |
-| **Then**: 1 neuer Eintrag sichtbar | `Get Count    ${LIST_ITEMS}    ==    1` |
-
 **Beispiel-Suite (Minimalfassung):**
 ```robot
 *** Settings ***
 Library           Browser
-Suite Setup       Open App
-Suite Teardown    Close Browser
+Suite Setup         Starte ToDoMVC
+Suite Teardown      Close Browser
+Test Setup          
+...    Todos Anlegen
+...    Einkaufen gehen
+...    Kochen
+...    Sport machen
+
+
 
 *** Variables ***
-${BASE_URL}          https://todomvc.com/examples/vanillajs/
-${INPUT}             css=input.new-todo
-${LIST_ITEMS}        css=.todo-list li
-${TOGGLE}            css=.toggle
-${DESTROY_BTN}       css=button.destroy
-${FILTER_ACTIVE}     text=Active
-${FILTER_COMPLETED}  text=Completed
-${FILTER_ALL}        text=All
+${INPUT_NEW_TODO}               input.new-todo
+${TODO_LIST}                    ul.todo-list
+${TODO_ITEM}                    ul.todo-list li
+${CHECKBOX_TODO}                input.toggle
+${TODO_ITEM_ERLEDIGT}           ul.todo-list li:has(input.toggle:checked)
+${TODO_ITEM_NICHT_ERLEDIGT}     ul.todo-list li:has(input.toggle:not(:checked))
+${BTN_TODO_LÖSCHEN}             .destroy
 
 *** Keywords ***
-Open App
-    New Browser    headless=${TRUE}
+# --- SETUP & TEARDOWN ----
+Starte ToDoMVC
+    [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
+    New Browser    ${BROWSER}    headless=${HEADLESS}
     New Context
     New Page    ${BASE_URL}
+    Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
+
+# --- User-Keywords ---
+
+Todos Anlegen
+    [Documentation]    Legt beliebig viele Todos an.
+    [Arguments]    @{todo_liste}
+    FOR    ${todo}    IN    @{todo_liste}
+        Fill Text    ${INPUT_NEW_TODO}    ${todo}
+        Press Keys    ${INPUT_NEW_TODO}    Enter
+    END
+
+Vorhandene Todos
+    [Documentation]    Prüft wie viele Todos noch offen sind
+    [Arguments]    ${erwartete_anzahl}
+    ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
+    Log To Console    Vorhandene Todos: ${anzahl_todos}
+    Should Be Equal As Integers
+    ...    ${anzahl_todos}
+    ...    ${erwartete_anzahl}
+    ...    msg=Erwartete Anzahl der Todos stimmt nicht
+
+Todos Als Erledigt Markieren
+    [Documentation]    Markiert alle übergebenen Todos als erledigt
+    [Arguments]    @{todo_liste}
+    FOR    ${todo}    IN    @{todo_liste}
+        Check Checkbox    ${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}
+    END
+
+Erledigte Todos
+    [Documentation]    Prüft wie viele Todos erledigt sind
+    [Arguments]    ${erwartete_anzahl}
+    ${erledigte_todos}    Get Element Count    ${CHECKBOX_TODO}:checked
+    Should Be Equal As Integers
+    ...    ${erledigte_todos}
+    ...    ${erwartete_anzahl}
+    ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
+
+Todos Löschen
+    [Documentation]    Löscht Todos je nach Status: alle | erledigt.
+    [Arguments]    ${status}=erledigt
+
+    ${selector}    Set Variable If
+    ...    '${status}'=='erledigt'    ${TODO_ITEM_ERLEDIGT}
+    ...    '${status}'=='alle'    ${TODO_ITEM}
+
+    WHILE    True
+        ${count}    Get Element Count    ${selector}
+        IF    ${count} == 0    BREAK
+        Hover    ${selector} >> nth=0
+        Click    ${selector} >> nth=0 >> ${BTN_TODO_LÖSCHEN}
+    END
+    ${remaining}    Get Element Count    ${TODO_ITEM}
+    Log To Console    Verbleibende Todos (gesamt): ${remaining}
+
 
 *** Test Cases ***
-TC1 Todo anlegen
-    Fill Text    ${INPUT}    Kaffee kaufen
-    Press Keys   ${INPUT}    Enter
-    Get Count    ${LIST_ITEMS}    ==    1
+TID-001: Todo Anlegen
+    [Documentation]    Test.Cas
+    [Tags]    regression    tid-001
+    Todos Anlegen    Wohnung aufräumen
+    Vorhandene Todos    erwartete_anzahl=4
+    Take Screenshot
+    # [Teardown]    Todos Löschen    status=nicht erledigt    expected_remaining=0
 
-TC2 Todo löschen
-    Fill Text    ${INPUT}    Milch kaufen
-    Press Keys   ${INPUT}    Enter
-    Hover        ${LIST_ITEMS} >> nth=0
-    Click        ${DESTROY_BTN}
-    # Erwartung: kein "Milch kaufen" mehr in der Liste
-    Get Count    ${LIST_ITEMS}    ==    1
+TID-002: Todos auf erledigt setzen
+    [Documentation]    Testet das Anlegen eines neuen Todos mit Sonderzeichen.
+    [Tags]    regression    tid-002
+    Take Screenshot
+    Vorhandene Todos    erwartete_anzahl=3
+    Todos Als Erledigt Markieren    Einkaufen gehen    Kochen
+    Erledigte Todos    erwartete_anzahl=2
+    Take Screenshot
+    # [Teardown]    Todos Löschen    status=erledigt    expected_remaining=0
 
-TC3 Todo als erledigt markieren
-    Fill Text    ${INPUT}    Brot kaufen
-    Press Keys   ${INPUT}    Enter
-    Click        ${LIST_ITEMS} >> nth=0 >> ${TOGGLE}
-    Locator Should Have Attribute    ${LIST_ITEMS} >> nth=0    class    .*completed.*
+TID-003: Erledigte Todos löschen
+    [Documentation]    Testet das Anlegen eines neuen Todos mit Sonderzeichen.
+    [Tags]    regression    tid-003
+    Todos Als Erledigt Markieren    Sport machen
+    Erledigte Todos    erwartete_anzahl=1
+    Todos Löschen    status=erledigt
+    Erledigte Todos    erwartete_anzahl=0
+    Vorhandene Todos
 
-TC4 Filtern Active/Completed
-    Fill Text    ${INPUT}    Offen
-    Press Keys   ${INPUT}    Enter
-    Fill Text    ${INPUT}    Erledigt
-    Press Keys   ${INPUT}    Enter
-    Click        ${LIST_ITEMS} >> nth=1 >> ${TOGGLE}
-    Click        ${FILTER_ACTIVE}
-    Get Count    ${LIST_ITEMS}    ==    1
-    Click        ${FILTER_COMPLETED}
-    Get Count    ${LIST_ITEMS}    ==    1
-    Click        ${FILTER_ALL}
-    Get Count    ${LIST_ITEMS}    ==    2
+    Take Screenshot
+
