@@ -51,7 +51,9 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ---
 
 ## Demo-Setup (TodoMVC)
-- **Testobjekt:** TodoMVC: https://todomvc.com/examples/vue/dist/#/
+- **Testobjekt:** 
+  - TodoMVC: https://todomvc.com/examples/vue/dist/#/
+  
 - **Ziel-Testfälle:**  
   1. **TID-1: Anlegen** eines Todos  
   2. **TID-2: Erledigen** eines Todos  
