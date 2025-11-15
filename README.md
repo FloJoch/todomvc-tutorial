@@ -38,11 +38,8 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **robot** – Führt Robot-Tests aus und erzeugt `output.xml`, `log.html` und `report.html`.  
   Beispiel: `robot -d results tests/`
 
-- **rebot** – Erzeugt Reports aus einer oder mehreren `output.xml` (z. B. zum Mergen paralleler Läufe).  
-  Beispiel: `rebot -d results_merged output.xml`
-
 - **libdoc** – Generiert Keyword-Dokumentation (HTML/JSON/XML) aus Libraries oder Resource-Files.  
-  Beispiel: `python -m robot.libdoc resources/keywords/01_allgemein_keywords.resource docs/allgemein_keywords.html`
+  Beispiel: `python -m robot.libdoc resources/keywords/keywords.resource doku/keyworddoku.html`
 
 ---
 
