@@ -54,9 +54,11 @@ Todos Löschen
     [Documentation]    Löscht Todos je nach Status: alle | erledigt.
     [Arguments]    ${status}=erledigt
 
-    ${selector}    Set Variable If
-    ...    '${status}'=='erledigt'    ${TODO_ITEM_ERLEDIGT}
-    ...    '${status}'=='alle'    ${TODO_ITEM}
+    IF    ${status} == 'erledigt'
+        VAR    ${selector}    ${TODO_ITEM_ERLEDIGT}
+    ELSE IF    '${status}' == 'alle'
+        VAR    ${selector}    ${TODO_ITEM}
+    END
 
     WHILE    True
         ${count}    Get Element Count    ${selector}

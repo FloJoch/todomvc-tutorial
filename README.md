@@ -16,23 +16,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
 ---
 
-## Inhalt
-- [Robot Framework – Kurzüberblick](#robot-framework--kurzüberblick)
-- [Robot Framework Foundation – Kurzüberblick](#robot-framework-foundation--kurzüberblick)
-- [Demo-Setup (TodoMVC)](#demo-setup-todomvc)
-- [Manuelle Testfälle (Jira-Darstellung)](#manuelle-testfälle-jira-darstellung)
-- [Vom manuellen Test zu Robot-Schritten](#vom-manuellen-test-zu-robot-schritten)
-- [Selektor-Strategie & Stabilität](#selektor-strategie--stabilität)
-- [Projektstruktur](#projektstruktur)
-- [Ausführen](#ausführen)
-- [Erweiterungen: Suite Hooks, Tags, Reports](#erweiterungen-suite-hooks-tags-reports)
-- [Troubleshooting](#troubleshooting)
-- [FAQ](#faq)
-- [Links & Ressourcen](#links--ressourcen)
-- [License](#license)
-
----
-
 ## Robot Framework – Kurzüberblick
 - **Open Source**: Testautomatisierungs-Framework unter anderem **Akkzeptanztests**, **Systemtests** und **E2E-Tests**.
 - **Anwendungsbereiche**: Testautomatisierung und Robotic Process Automation  
@@ -48,6 +31,18 @@ _Aus manuellen Schritten werden lauffähige Suites._
   
   ![foundation-qr-code](resources/config/images/qr-code.png)
 
+---
+
+## CLI – Wichtige Commands
+
+- **robot** – Führt Robot-Tests aus und erzeugt `output.xml`, `log.html` und `report.html`.  
+  Beispiel: `robot -d results tests/`
+
+- **rebot** – Erzeugt Reports aus einer oder mehreren `output.xml` (z. B. zum Mergen paralleler Läufe).  
+  Beispiel: `rebot -d results_merged output.xml`
+
+- **libdoc** – Generiert Keyword-Dokumentation (HTML/JSON/XML) aus Libraries oder Resource-Files.  
+  Beispiel: `python -m robot.libdoc resources/keywords/01_allgemein_keywords.resource docs/allgemein_keywords.html`
 
 ---
 
@@ -146,9 +141,11 @@ Todos Löschen
     [Documentation]    Löscht Todos je nach Status: alle | erledigt.
     [Arguments]    ${status}=erledigt
 
-    ${selector}    Set Variable If
-    ...    '${status}'=='erledigt'    ${TODO_ITEM_ERLEDIGT}
-    ...    '${status}'=='alle'    ${TODO_ITEM}
+    IF    ${status} == 'erledigt'
+        VAR    ${selector}    ${TODO_ITEM_ERLEDIGT}
+    ELSE IF    '${status}' == 'alle'
+        VAR    ${selector}    ${TODO_ITEM}
+    END
 
     WHILE    True
         ${count}    Get Element Count    ${selector}
@@ -162,7 +159,7 @@ Todos Löschen
 
 *** Test Cases ***
 TID-001: Todo Anlegen
-    [Documentation]    Test.Cas
+    [Documentation]    xx
     [Tags]    regression    tid-001
     Todos Anlegen    Wohnung aufräumen
     Vorhandene Todos    erwartete_anzahl=4
