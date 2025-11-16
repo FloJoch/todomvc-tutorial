@@ -1,139 +1,175 @@
-{"level":30,"time":"2025-11-15T03:19:14.946Z","pid":17868,"hostname":"Flo","msg":"Listening on 127.0.0.1:55590"}
-{"level":30,"time":"2025-11-15T03:19:15.404Z","pid":17868,"hostname":"Flo","msg":"Start of node method newBrowser"}
-{"level":30,"time":"2025-11-15T03:19:15.551Z","pid":17868,"hostname":"Flo","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
-{"level":30,"time":"2025-11-15T03:19:15.551Z","pid":17868,"hostname":"Flo","msg":"Adding 0 contexts to browser"}
-{"level":30,"time":"2025-11-15T03:19:15.551Z","pid":17868,"hostname":"Flo","msg":"End of node method newBrowser"}
-{"level":30,"time":"2025-11-15T03:19:15.558Z","pid":17868,"hostname":"Flo","msg":"Start of node method newContext"}
-{"level":30,"time":"2025-11-15T03:19:15.558Z","pid":17868,"hostname":"Flo","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}}"}
-{"level":30,"time":"2025-11-15T03:19:15.558Z","pid":17868,"hostname":"Flo","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@cfd7c48c03286103db54ddd13abd6896\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=796ef2d9-2903-4012-91de-0ffabd8c90f4\"}"}
-{"level":30,"time":"2025-11-15T03:19:15.558Z","pid":17868,"hostname":"Flo","msg":"Trace file: "}
-{"level":30,"time":"2025-11-15T03:19:15.573Z","pid":17868,"hostname":"Flo","msg":"Setting default timeout for context context=bd1fe34f-c72e-49ba-a3ab-a55cab9873a7 to 10000"}
-{"level":30,"time":"2025-11-15T03:19:15.573Z","pid":17868,"hostname":"Flo","msg":"Changed active context: context=bd1fe34f-c72e-49ba-a3ab-a55cab9873a7"}
-{"level":30,"time":"2025-11-15T03:19:15.573Z","pid":17868,"hostname":"Flo","msg":"End of node method newContext"}
-{"level":30,"time":"2025-11-15T03:19:15.576Z","pid":17868,"hostname":"Flo","msg":"Start of node method newPage"}
-{"level":30,"time":"2025-11-15T03:19:15.577Z","pid":17868,"hostname":"Flo","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@cfd7c48c03286103db54ddd13abd6896\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=bd1fe34f-c72e-49ba-a3ab-a55cab9873a7\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@03ab0b6c79714446d870843f7e44d557\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}},\"traceFile\":\"\"}],\"id\":\"browser=796ef2d9-2903-4012-91de-0ffabd8c90f4\"}"}
-{"level":30,"time":"2025-11-15T03:19:15.751Z","pid":17868,"hostname":"Flo","msg":"Video path: undefined"}
-{"level":30,"time":"2025-11-15T03:19:15.751Z","pid":17868,"hostname":"Flo","msg":"Changed active page"}
-{"level":30,"time":"2025-11-15T03:19:15.863Z","pid":17868,"hostname":"Flo","msg":"End of node method newPage"}
-{"level":30,"time":"2025-11-15T03:19:15.874Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:15.876Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:15.880Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.880Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.904Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.907Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.907Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.917Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.920Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.920Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.935Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.938Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.938Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.944Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.947Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.947Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.952Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.954Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.954Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.960Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.964Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.964Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.970Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:15.972Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.973Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:15.978Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:15.982Z","pid":17868,"hostname":"Flo","msg":"Start of node method getElementCount"}
-{"level":30,"time":"2025-11-15T03:19:15.982Z","pid":17868,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li in page."}
-{"level":30,"time":"2025-11-15T03:19:15.984Z","pid":17868,"hostname":"Flo","msg":"End of node method getElementCount"}
-{"level":30,"time":"2025-11-15T03:19:15.989Z","pid":17868,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:15.989Z","pid":17868,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
-{"level":30,"time":"2025-11-15T03:19:16.038Z","pid":17868,"hostname":"Flo","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:16.043Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.044Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.046Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.047Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.049Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.050Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.054Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.057Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.057Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.062Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.065Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.065Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.071Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.073Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.073Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.080Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.083Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.083Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.087Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.089Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.089Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.095Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.099Z","pid":17868,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:16.099Z","pid":17868,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-2.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
-{"level":30,"time":"2025-11-15T03:19:16.144Z","pid":17868,"hostname":"Flo","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:16.148Z","pid":17868,"hostname":"Flo","msg":"Start of node method getElementCount"}
-{"level":30,"time":"2025-11-15T03:19:16.148Z","pid":17868,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li in page."}
-{"level":30,"time":"2025-11-15T03:19:16.149Z","pid":17868,"hostname":"Flo","msg":"End of node method getElementCount"}
-{"level":30,"time":"2025-11-15T03:19:16.155Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.156Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.158Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.159Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.162Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.162Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.166Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.168Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.168Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.174Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.177Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.177Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.181Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.183Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.184Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.191Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.193Z","pid":17868,"hostname":"Flo","msg":"Start of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.194Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.197Z","pid":17868,"hostname":"Flo","msg":"End of node method fillText"}
-{"level":30,"time":"2025-11-15T03:19:16.200Z","pid":17868,"hostname":"Flo","msg":"Start of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.200Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
-{"level":30,"time":"2025-11-15T03:19:16.205Z","pid":17868,"hostname":"Flo","msg":"End of node method press"}
-{"level":30,"time":"2025-11-15T03:19:16.208Z","pid":17868,"hostname":"Flo","msg":"Start of node method checkCheckbox"}
-{"level":30,"time":"2025-11-15T03:19:16.208Z","pid":17868,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has-text(\"Sport machen\") input.toggle in page."}
-{"level":30,"time":"2025-11-15T03:19:16.222Z","pid":17868,"hostname":"Flo","msg":"Error of node method  checkCheckbox"}
-================= Original suppressed error =================
-locator.waitFor: Error: strict mode violation: locator('ul.todo-list li:has-text("Sport machen") input.toggle') resolved to 3 elements:
-    1) <input class="toggle" type="checkbox"/> aka getByRole('checkbox').nth(3)
-    2) <input class="toggle" type="checkbox"/> aka locator('li:nth-child(7) > .view > .toggle')
-    3) <input class="toggle" type="checkbox"/> aka locator('li:nth-child(10) > .view > .toggle')
-
-Call log:
-[2m  - waiting for locator('ul.todo-list li:has-text("Sport machen") input.toggle')[22m
-
-    at checkCheckbox (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:12371:17)
-    at async PlaywrightServer.checkCheckbox (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:13635:28)
-=============================================================
-{"level":30,"time":"2025-11-15T03:19:16.225Z","pid":17868,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:16.225Z","pid":17868,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
-{"level":30,"time":"2025-11-15T03:19:16.263Z","pid":17868,"hostname":"Flo","msg":"End of node method takeScreenshot"}
-{"level":30,"time":"2025-11-15T03:19:16.328Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.329Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.331Z","pid":17868,"hostname":"Flo","msg":"Start of node method closeBrowser"}
-{"level":30,"time":"2025-11-15T03:19:16.337Z","pid":17868,"hostname":"Flo","msg":"Removed page=d992c25d-7faf-437f-9be8-dfd661c3c0e1 from context=bd1fe34f-c72e-49ba-a3ab-a55cab9873a7 page stack"}
-{"level":30,"time":"2025-11-15T03:19:16.474Z","pid":17868,"hostname":"Flo","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2025-11-16T22:48:39.496Z","pid":3512,"hostname":"Flo","msg":"Listening on 127.0.0.1:50314"}
+{"level":30,"time":"2025-11-16T22:48:39.977Z","pid":3512,"hostname":"Flo","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-11-16T22:48:40.133Z","pid":3512,"hostname":"Flo","msg":"Adding browser to stack: chromium, version: 141.0.7390.37"}
+{"level":30,"time":"2025-11-16T22:48:40.133Z","pid":3512,"hostname":"Flo","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-11-16T22:48:40.133Z","pid":3512,"hostname":"Flo","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-11-16T22:48:40.140Z","pid":3512,"hostname":"Flo","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-11-16T22:48:40.141Z","pid":3512,"hostname":"Flo","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}}"}
+{"level":30,"time":"2025-11-16T22:48:40.141Z","pid":3512,"hostname":"Flo","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@4d589b042482d5e4b1199f8681ff8487\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=82ea5fe4-4359-4509-b254-33d4fd94cfe7\"}"}
+{"level":30,"time":"2025-11-16T22:48:40.141Z","pid":3512,"hostname":"Flo","msg":"Trace file: "}
+{"level":30,"time":"2025-11-16T22:48:40.153Z","pid":3512,"hostname":"Flo","msg":"Setting default timeout for context context=b216ae6e-b58e-415c-9a92-a963fa40691b to 10000"}
+{"level":30,"time":"2025-11-16T22:48:40.154Z","pid":3512,"hostname":"Flo","msg":"Changed active context: context=b216ae6e-b58e-415c-9a92-a963fa40691b"}
+{"level":30,"time":"2025-11-16T22:48:40.154Z","pid":3512,"hostname":"Flo","msg":"End of node method newContext"}
+{"level":30,"time":"2025-11-16T22:48:40.158Z","pid":3512,"hostname":"Flo","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-11-16T22:48:40.158Z","pid":3512,"hostname":"Flo","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@4d589b042482d5e4b1199f8681ff8487\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=b216ae6e-b58e-415c-9a92-a963fa40691b\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@2f50b1949ddd82cbae3807914bfc4738\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1280,\"height\":720}},\"traceFile\":\"\"}],\"id\":\"browser=82ea5fe4-4359-4509-b254-33d4fd94cfe7\"}"}
+{"level":30,"time":"2025-11-16T22:48:40.343Z","pid":3512,"hostname":"Flo","msg":"Video path: undefined"}
+{"level":30,"time":"2025-11-16T22:48:40.343Z","pid":3512,"hostname":"Flo","msg":"Changed active page"}
+{"level":30,"time":"2025-11-16T22:48:40.461Z","pid":3512,"hostname":"Flo","msg":"End of node method newPage"}
+{"level":30,"time":"2025-11-16T22:48:40.476Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.477Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.482Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.482Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.505Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.508Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.509Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.517Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.521Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.521Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.538Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.542Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.542Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.549Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.552Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.552Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.557Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.560Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.560Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.568Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.572Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.573Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.577Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.580Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.580Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.609Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.613Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.613Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li in page."}
+{"level":30,"time":"2025-11-16T22:48:40.615Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.621Z","pid":3512,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.622Z","pid":3512,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-16T22:48:40.667Z","pid":3512,"hostname":"Flo","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.671Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.671Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with #toggle-all-input in page."}
+{"level":30,"time":"2025-11-16T22:48:40.689Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.691Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.692Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with button.clear-completed in page."}
+{"level":30,"time":"2025-11-16T22:48:40.726Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.733Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.734Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.738Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.739Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:40.743Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.743Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.749Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.752Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.752Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.757Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.760Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.760Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.767Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.770Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.770Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.775Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.778Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.778Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.782Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:40.785Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.785Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:40.790Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:40.794Z","pid":3512,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.794Z","pid":3512,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-2.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-16T22:48:40.840Z","pid":3512,"hostname":"Flo","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.844Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.844Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li in page."}
+{"level":30,"time":"2025-11-16T22:48:40.845Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.851Z","pid":3512,"hostname":"Flo","msg":"Start of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:40.851Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has-text(\"Einkaufen gehen\") input.toggle in page."}
+{"level":30,"time":"2025-11-16T22:48:40.878Z","pid":3512,"hostname":"Flo","msg":"End of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:40.881Z","pid":3512,"hostname":"Flo","msg":"Start of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:40.881Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has-text(\"Kochen\") input.toggle in page."}
+{"level":30,"time":"2025-11-16T22:48:40.905Z","pid":3512,"hostname":"Flo","msg":"End of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:40.909Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.909Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: input.toggle:checked in page."}
+{"level":30,"time":"2025-11-16T22:48:40.910Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:40.915Z","pid":3512,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.915Z","pid":3512,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-3.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-16T22:48:40.959Z","pid":3512,"hostname":"Flo","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:40.962Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.962Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with #toggle-all-input in page."}
+{"level":30,"time":"2025-11-16T22:48:40.982Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.984Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:40.984Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with button.clear-completed in page."}
+{"level":30,"time":"2025-11-16T22:48:41.003Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.010Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.011Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.017Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.018Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.022Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.022Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.028Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.030Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.031Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.035Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.038Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.038Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.044Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.047Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.047Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.052Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.055Z","pid":3512,"hostname":"Flo","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.055Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.060Z","pid":3512,"hostname":"Flo","msg":"End of node method fillText"}
+{"level":30,"time":"2025-11-16T22:48:41.063Z","pid":3512,"hostname":"Flo","msg":"Start of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.063Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with input.new-todo in page."}
+{"level":30,"time":"2025-11-16T22:48:41.067Z","pid":3512,"hostname":"Flo","msg":"End of node method press"}
+{"level":30,"time":"2025-11-16T22:48:41.072Z","pid":3512,"hostname":"Flo","msg":"Start of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:41.072Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has-text(\"Sport machen\") input.toggle in page."}
+{"level":30,"time":"2025-11-16T22:48:41.087Z","pid":3512,"hostname":"Flo","msg":"End of node method checkCheckbox"}
+{"level":30,"time":"2025-11-16T22:48:41.090Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.090Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: input.toggle:checked in page."}
+{"level":30,"time":"2025-11-16T22:48:41.091Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.096Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.096Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li:has(input.toggle:checked) in page."}
+{"level":30,"time":"2025-11-16T22:48:41.098Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.101Z","pid":3512,"hostname":"Flo","msg":"Start of node method hover"}
+{"level":30,"time":"2025-11-16T22:48:41.101Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has(input.toggle:checked) in page."}
+{"level":30,"time":"2025-11-16T22:48:41.124Z","pid":3512,"hostname":"Flo","msg":"End of node method hover"}
+{"level":30,"time":"2025-11-16T22:48:41.127Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.127Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with ul.todo-list li:has(input.toggle:checked) >> .destroy in page."}
+{"level":30,"time":"2025-11-16T22:48:41.148Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.151Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.151Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: ul.todo-list li:has(input.toggle:checked) in page."}
+{"level":30,"time":"2025-11-16T22:48:41.153Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.157Z","pid":3512,"hostname":"Flo","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.157Z","pid":3512,"hostname":"Flo","msg":"Strict mode is disabled, return Locator: input.toggle:checked in page."}
+{"level":30,"time":"2025-11-16T22:48:41.158Z","pid":3512,"hostname":"Flo","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-11-16T22:48:41.162Z","pid":3512,"hostname":"Flo","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:41.162Z","pid":3512,"hostname":"Flo","Take screenshot with options: ":{"path":"C:\\Projects\\todomvc-tutorial\\results\\browser\\screenshot\\robotframework-browser-screenshot-4.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-11-16T22:48:41.208Z","pid":3512,"hostname":"Flo","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-11-16T22:48:41.211Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.211Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with #toggle-all-input in page."}
+{"level":30,"time":"2025-11-16T22:48:41.232Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.235Z","pid":3512,"hostname":"Flo","msg":"Start of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.235Z","pid":3512,"hostname":"Flo","msg":"Strict mode is enabled, find Locator with button.clear-completed in page."}
+{"level":30,"time":"2025-11-16T22:48:41.252Z","pid":3512,"hostname":"Flo","msg":"End of node method click"}
+{"level":30,"time":"2025-11-16T22:48:41.258Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.259Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.262Z","pid":3512,"hostname":"Flo","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-11-16T22:48:41.269Z","pid":3512,"hostname":"Flo","msg":"Removed page=ca7b37a7-84ae-43c2-8378-e4d254a7bc43 from context=b216ae6e-b58e-415c-9a92-a963fa40691b page stack"}
+{"level":30,"time":"2025-11-16T22:48:41.419Z","pid":3512,"hostname":"Flo","msg":"End of node method closeBrowser"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
-    at PlaywrightState.getActiveBrowser (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:12672:15)
-    at PlaywrightServer.getActiveBrowser (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:13622:59)
-    at PlaywrightServer.setTimeout (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:13873:57)
-    at Object.onReceiveHalfClose (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
-    at BaseServerInterceptingCall.maybePushNextMessage (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
-    at BaseServerInterceptingCall.handleEndEvent (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
-    at ServerHttp2Stream.<anonymous> (c:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
+    at PlaywrightState.getActiveBrowser (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:12672:15)
+    at PlaywrightServer.getActiveBrowser (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:13622:59)
+    at PlaywrightServer.setTimeout (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js:13873:57)
+    at Object.onReceiveHalfClose (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1464:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:595:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:635:14)
+    at ServerHttp2Stream.<anonymous> (C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:394:18)
     at ServerHttp2Stream.emit (node:events:530:35)
     at endReadableNT (node:internal/streams/readable:1698:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
 =============================================================
-{"level":30,"time":"2025-11-15T03:19:16.477Z","pid":17868,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.477Z","pid":17868,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-11-15T03:19:16.512Z","pid":17868,"hostname":"Flo","msg":"Start of node method closeAllBrowsers"}
-{"level":30,"time":"2025-11-15T03:19:16.512Z","pid":17868,"hostname":"Flo","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2025-11-16T22:48:41.425Z","pid":3512,"hostname":"Flo","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:41.425Z","pid":3512,"hostname":"Flo","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-11-16T22:48:42.090Z","pid":3512,"hostname":"Flo","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-11-16T22:48:42.090Z","pid":3512,"hostname":"Flo","msg":"End of node method closeAllBrowsers"}

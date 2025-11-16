@@ -10,8 +10,10 @@ ${INPUT_NEW_TODO}               input.new-todo
 ${TODO_LIST}                    ul.todo-list
 ${TODO_ITEM}                    ul.todo-list li
 ${CHECKBOX_TODO}                input.toggle
+${BTN_CHECK_ALL}                \#toggle-all-input
 
 ${TODO_ITEM_ERLEDIGT}           ul.todo-list li:has(input.toggle:checked)
 ${TODO_ITEM_NICHT_ERLEDIGT}     ul.todo-list li:has(input.toggle:not(:checked))
 
 ${BTN_TODO_LÖSCHEN}             .destroy
+${BTN_CLEAR_COMPLETED}          button.clear-completed

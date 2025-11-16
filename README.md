@@ -91,12 +91,18 @@ ${BTN_TODO_LÖSCHEN}             .destroy
 
 *** Keywords ***
 # --- SETUP & TEARDOWN ----
+
 Starte ToDoMVC
     [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
     New Browser    ${BROWSER}    headless=${HEADLESS}
     New Context
     New Page    ${BASE_URL}
     Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
+
+Todo Liste Leeren
+    [Documentation]    Löscht alle vorhandenen Todos
+    Click    ${BTN_CHECK_ALL}
+    Click    ${BTN_CLEAR_COMPLETED}
 
 # --- User-Keywords ---
 
@@ -134,25 +140,14 @@ Erledigte Todos
     ...    ${erwartete_anzahl}
     ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
 
-Todos Löschen
-    [Documentation]    Löscht Todos je nach Status: alle | erledigt.
-    [Arguments]    ${status}=erledigt
-
-    IF    ${status} == 'erledigt'
-        VAR    ${selector}    ${TODO_ITEM_ERLEDIGT}
-    ELSE IF    '${status}' == 'alle'
-        VAR    ${selector}    ${TODO_ITEM}
-    END
-
+Erledigte Todos Löschen
+    [Documentation]    Löscht alle erledigten TodosWHILE
     WHILE    True
-        ${count}    Get Element Count    ${selector}
+        ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
         IF    ${count} == 0    BREAK
-        Hover    ${selector} >> nth=0
-        Click    ${selector} >> nth=0 >> ${BTN_TODO_LÖSCHEN}
+        Hover    ${TODO_ITEM_ERLEDIGT}
+        Click    ${TODO_ITEM_ERLEDIGT} >> ${BTN_TODO_LÖSCHEN}
     END
-    ${remaining}    Get Element Count    ${TODO_ITEM}
-    Log To Console    Verbleibende Todos (gesamt): ${remaining}
-
 
 *** Test Cases ***
 TID-001: Todo Anlegen
