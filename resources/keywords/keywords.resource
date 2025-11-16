@@ -17,8 +17,8 @@ Starte ToDoMVC
 
 Todo Liste Leeren
     [Documentation]    Löscht alle vorhandenen Todos
-    Click    ${BTN_CHECK_ALL}
-    Click    ${BTN_CLEAR_COMPLETED}
+    Click    ${BUTTON_CHECK_ALL}
+    Click    ${BUTTON_CLEAR_COMPLETED}
 
 # --- User-Keywords ---
 
@@ -62,5 +62,5 @@ Erledigte Todos Löschen
         ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
         IF    ${count} == 0    BREAK
         Hover    ${TODO_ITEM_ERLEDIGT}
-        Click    ${TODO_ITEM_ERLEDIGT} >> ${BTN_TODO_LÖSCHEN}
+        Click    ${TODO_ITEM_ERLEDIGT} >> ${BUTTON_TODO_LÖSCHEN}
     END
