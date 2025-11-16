@@ -17,14 +17,14 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ---
 
 ## Robot Framework – Kurzüberblick
-- **Open Source**: Testautomatisierungs-Framework unter anderem **Akkzeptanztests**, **Systemtests** und **E2E-Tests**.
-- **Anwendungsbereiche**: Testautomatisierung und Robotic Process Automation  
-- **Spezifikationsstyle** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
+- **Open Source:** Testautomatisierungs-Framework für **Akkzeptanztests**, **Systemtests**, **E2E-Tests** und vielem mehr.
+- **Anwendungsbereiche:** Testautomatisierung und Robotic Process Automation  
+- **Spezifikationsstyle:** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
 - **Stärken:** Lesbarkeit, Wiederverwendung, Sehr aktive Community, leichter Einstieg für Nutzer ohne viel Entwicklungserfahrung
 
 ---
 
-## Robot Framework Foundation – Kurzüberblick
+## Robot Framework Foundation
 - **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
 - **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
 - **Weitere Infos:** https://robotframework.org/foundation/
@@ -48,22 +48,14 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - TodoMVC: https://todomvc.com/examples/vue/dist/#/
 
 - **Ziel-Testfälle:**  
-  1. **TID-1: Anlegen** eines Todos  
-  2. **TID-2: Erledigen** eines Todos  
-  3. **TID-3: Löschen** eines Todos 
+  - **TC1 – Todo anlegen**  
+    ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
 
+  - **TC2 – Todo löschen**  
+    ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
 
----
-
-## Manuelle Testfälle (Jira-Darstellung)
-- **TC1 – Todo anlegen**  
-  ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
-
-- **TC2 – Todo löschen**  
-  ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
-
-- **TC3 – Als erledigt markieren**  
-  ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
+  - **TC3 – Als erledigt markieren**  
+    ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
 
 ---
 **Beispiel-Suite (Minimalfassung):**
