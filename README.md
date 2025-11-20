@@ -1,6 +1,14 @@
 # Vom Klick zum Keyword: Einführung in automatisiertes Testen mit Robot Framework
 _Aus manuellen Schritten werden lauffähige Suites._
 
+---
+
+## Motivation
+- Durch Glück bei der Stadt ins Testing gerutscht
+- Duales Studium Wirtschaftsinformatik, schlechte Vorbereitung aufs Berufsleben
+- Wenig Programmierkenntnis, Robot Framework leichter Einstieg in die Entwicklung
+- Erste manuelle Tests binnen kurzer Zeit auf die Beine gestellt
+
 
 ---
 
@@ -17,8 +25,8 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ---
 
 ## Robot Framework – Kurzüberblick
-- **Open Source:** Testautomatisierungs-Framework für **Akkzeptanztests**, **Systemtests**, **E2E-Tests** und vielem mehr.
-- **Anwendungsbereiche:** Testautomatisierung und Robotic Process Automation  
+- **Open Source:** Generisches Testautomatisierungs-Framework für **Akkzeptanztests**, **Systemtests**, **E2E-Tests** und vieles mehr.
+- **Anwendungsbereiche:** Testautomatisierung und Robotic Process Automation (RPA)
 - **Spezifikationsstyle:** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
 - **Stärken:** Lesbarkeit, Wiederverwendung, Sehr aktive Community, leichter Einstieg für Nutzer ohne viel Entwicklungserfahrung
 

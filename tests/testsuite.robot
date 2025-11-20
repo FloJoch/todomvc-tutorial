@@ -5,7 +5,10 @@ Resource            ${EXECDIR}/resources/keywords/keywords.resource
 
 Suite Setup         Starte ToDoMVC
 Suite Teardown      Close Browser
-Test Setup          Todos Anlegen    Einkaufen gehen    Kochen    Sport machen
+Test Setup          Todos Anlegen
+...    Einkaufen gehen    
+...    Kochen    
+...    Sport machen
 Test Teardown       Todo Liste Leeren
 
 
