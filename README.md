@@ -1,146 +1,180 @@
-# Von Klick zu Keyword: Einführung in automatisiertes Testen mit Robot Framework
+# Vom Klick zum Keyword: Einführung in automatisiertes Testen mit Robot Framework
 _Aus manuellen Schritten werden lauffähige Suites._
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](#)
-[![Robot Framework](https://img.shields.io/badge/Robot%20Framework-✔-blue.svg)](#)
-[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey.svg)](#license)
+
+---
+
+## Libraries
+- **BuiltIn-Library** https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+- **Browser-Library** https://marketsquare.github.io/robotframework-browser/Browser.html
 
 ---
 
 ## TL;DR
-- **Was?** Mini-Demo/Tutorial: Manuelle Testfälle → Robot-Tests (TodoMVC).
-- **Dauer:** ~15–30 Minuten (je nach Tiefe).
+- **Was?** Mini-Demo: Manuelle Testfälle → Robot-Tests (TodoMVC).
 - **Für wen?** Einsteiger & Praktiker, die manuelle Tests zügig automatisieren wollen.
-- **Repo-Ziel:** Klare Struktur, kurze Selektoren, reproduzierbare Läufe (lokal & CI).
-
----
-
-## Inhalt
-- [Robot Framework – Kurzüberblick](#robot-framework--kurzüberblick)
-- [Robot Framework Foundation – Kurzüberblick](#robot-framework-foundation--kurzüberblick)
-- [Demo-Setup (TodoMVC)](#demo-setup-todomvc)
-- [Manuelle Testfälle (Jira-Darstellung)](#manuelle-testfälle-jira-darstellung)
-- [Vom manuellen Test zu Robot-Schritten](#vom-manuellen-test-zu-robot-schritten)
-- [Selektor-Strategie & Stabilität](#selektor-strategie--stabilität)
-- [Projektstruktur](#projektstruktur)
-- [Ausführen](#ausführen)
-- [Erweiterungen: Suite Hooks, Tags, Reports](#erweiterungen-suite-hooks-tags-reports)
-- [Troubleshooting](#troubleshooting)
-- [FAQ](#faq)
-- [Links & Ressourcen](#links--ressourcen)
-- [License](#license)
 
 ---
 
 ## Robot Framework – Kurzüberblick
-- **Open Source** Testautomatisierungs-Framework für **akzeptanznahe** und **E2E**-Tests.  
-- **Schlüsselideen:** Keyword-Driven, lesbare Syntax, erweiterbar (Bibliotheken, Python/Java).  
-- **Typische Use-Cases:** Web-UI (Playwright/Browser), APIs, CLI, Datenpipelines, RPA.  
-- **Stärken:** Lesbarkeit, Wiederverwendung, Tooling (Reports/Logs), Ökosystem.
-
-> **Merksatz:** „Natürlich beschriebene Schritte werden zu **Keywords** – ausführbar, versionierbar, wartbar.“
+- **Open Source:** Testautomatisierungs-Framework für **Akkzeptanztests**, **Systemtests**, **E2E-Tests** und vielem mehr.
+- **Anwendungsbereiche:** Testautomatisierung und Robotic Process Automation  
+- **Spezifikationsstyle:** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
+- **Stärken:** Lesbarkeit, Wiederverwendung, Sehr aktive Community, leichter Einstieg für Nutzer ohne viel Entwicklungserfahrung
 
 ---
 
-## Robot Framework Foundation – Kurzüberblick
+## Robot Framework Foundation
 - **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
-- **Rolle:** Governance, Events, Konferenzen, Förderprogramme, Zertifizierung/Brand.  
-- **Community-getrieben:** Beiträge aus Firmen & Open-Source-Projekten.  
-- **Transparenz:** Offene Roadmaps, offene Entwicklung.
+- **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
+- **Weitere Infos:** https://robotframework.org/foundation/
+  
+  ![foundation-qr-code](resources/config/images/qr-code.png)
 
-> **Open Source, non-profit, community-driven.**  
-> _Hinweis: Ersetze ggf. die Links unten durch eure bevorzugten Quellen._
+---
+
+## CLI – Wichtige Commands
+
+- **robot** – Führt Robot-Tests aus und erzeugt `output.xml`, `log.html` und `report.html`.  
+  Beispiel: `robot -d results tests/`
+
+- **libdoc** – Generiert Keyword-Dokumentation (HTML/JSON/XML) aus Libraries oder Resource-Files.  
+  Beispiel: `python -m robot.libdoc resources/keywords/keywords.resource doku/keyworddoku.html`
 
 ---
 
 ## Demo-Setup (TodoMVC)
-- **Testobjekt:** TodoMVC (VanillaJS-Variante).  
-- **Ziele:**  
-  1. **Anlegen** eines Todos  
-  2. **Löschen** eines Todos  
-  3. **Als erledigt markieren**  
-  4. **Filtern** (Active/Completed)
+- **Testobjekt:** 
+  - TodoMVC: https://todomvc.com/examples/vue/dist/#/
 
-> **Zeitbox Vorschlag:** 15 Minuten live, +5 Minuten Q&A.
+- **Ziel-Testfälle:**  
+  - **TC1 – Todo anlegen**  
+    ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
 
----
+  - **TC2 – Todo löschen**  
+    ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
 
-## Manuelle Testfälle (Jira-Darstellung)
-> **Platzhalter für drei Bilder** (Jira-Screenshots eurer manuellen Testfälle).  
-> Lege die Dateien z. B. nach `docs/img/`.
-
-- **TC1 – Todo anlegen**  
-  ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
-
-- **TC2 – Todo löschen**  
-  ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
-
-- **TC3 – Als erledigt markieren**  
-  ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
-
-> Optional viertes Bild (Filtern): `docs/img/tc4_jira.png`
+  - **TC3 – Als erledigt markieren**  
+    ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
 
 ---
-
-## Vom manuellen Test zu Robot-Schritten
-| Manuell (Given/When/Then) | Robot-Schritt (Keyword) |
-| --- | --- |
-| **Given**: App ist geöffnet | `New Browser` → `New Context` → `New Page    ${BASE_URL}` |
-| **When**: „Kaffee kaufen“ eingeben + Enter | `Fill Text    ${INPUT}    Kaffee kaufen` / `Press Keys    ${INPUT}    Enter` |
-| **Then**: 1 neuer Eintrag sichtbar | `Get Count    ${LIST_ITEMS}    ==    1` |
-
 **Beispiel-Suite (Minimalfassung):**
 ```robot
 *** Settings ***
 Library           Browser
-Suite Setup       Open App
-Suite Teardown    Close Browser
+Suite Setup         Starte ToDoMVC
+Suite Teardown      Close Browser
+Test Setup          
+...    Todos Anlegen
+...    Einkaufen gehen
+...    Kochen
+...    Sport machen
+
+
 
 *** Variables ***
-${BASE_URL}          https://todomvc.com/examples/vanillajs/
-${INPUT}             css=input.new-todo
-${LIST_ITEMS}        css=.todo-list li
-${TOGGLE}            css=.toggle
-${DESTROY_BTN}       css=button.destroy
-${FILTER_ACTIVE}     text=Active
-${FILTER_COMPLETED}  text=Completed
-${FILTER_ALL}        text=All
+${INPUT_NEW_TODO}               input.new-todo
+${TODO_LIST}                    ul.todo-list
+${TODO_ITEM}                    ul.todo-list li
+${CHECKBOX_TODO}                input.toggle
+${TODO_ITEM_ERLEDIGT}           ul.todo-list li:has(input.toggle:checked)
+${TODO_ITEM_NICHT_ERLEDIGT}     ul.todo-list li:has(input.toggle:not(:checked))
+${BTN_TODO_LÖSCHEN}             .destroy
 
 *** Keywords ***
-Open App
-    New Browser    headless=${TRUE}
+# --- SETUP & TEARDOWN ----
+
+Starte ToDoMVC
+    [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
+    New Browser    ${BROWSER}    headless=${HEADLESS}
     New Context
     New Page    ${BASE_URL}
+    Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
+
+Todo Liste Leeren
+    [Documentation]    Löscht alle vorhandenen Todos
+    Click    ${BTN_CHECK_ALL}
+    Click    ${BTN_CLEAR_COMPLETED}
+
+# --- User-Keywords ---
+
+Todos Anlegen
+    [Documentation]    Legt beliebig viele Todos an.
+    [Arguments]    @{todo_liste}
+    FOR    ${todo}    IN    @{todo_liste}
+        Fill Text    ${INPUT_NEW_TODO}    ${todo}
+        Press Keys    ${INPUT_NEW_TODO}    Enter
+    END
+
+Vorhandene Todos
+    [Documentation]    Prüft wie viele Todos noch offen sind
+    [Arguments]    ${erwartete_anzahl}
+    ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
+    Log To Console    Vorhandene Todos: ${anzahl_todos}
+    Should Be Equal As Integers
+    ...    ${anzahl_todos}
+    ...    ${erwartete_anzahl}
+    ...    msg=Erwartete Anzahl der Todos stimmt nicht
+
+Todos Als Erledigt Markieren
+    [Documentation]    Markiert alle übergebenen Todos als erledigt
+    [Arguments]    @{todo_liste}
+    FOR    ${todo}    IN    @{todo_liste}
+        Check Checkbox    ${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}
+    END
+
+Erledigte Todos
+    [Documentation]    Prüft wie viele Todos erledigt sind
+    [Arguments]    ${erwartete_anzahl}
+    ${erledigte_todos}    Get Element Count    ${CHECKBOX_TODO}:checked
+    Should Be Equal As Integers
+    ...    ${erledigte_todos}
+    ...    ${erwartete_anzahl}
+    ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
+
+Erledigte Todos Löschen
+    [Documentation]    Löscht alle erledigten TodosWHILE
+    WHILE    True
+        ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
+        IF    ${count} == 0    BREAK
+        Hover    ${TODO_ITEM_ERLEDIGT}
+        Click    ${TODO_ITEM_ERLEDIGT} >> ${BTN_TODO_LÖSCHEN}
+    END
 
 *** Test Cases ***
-TC1 Todo anlegen
-    Fill Text    ${INPUT}    Kaffee kaufen
-    Press Keys   ${INPUT}    Enter
-    Get Count    ${LIST_ITEMS}    ==    1
+*** Settings ***
+Documentation       regressionstests für die TodoMVC-Anwendung.
 
-TC2 Todo löschen
-    Fill Text    ${INPUT}    Milch kaufen
-    Press Keys   ${INPUT}    Enter
-    Hover        ${LIST_ITEMS} >> nth=0
-    Click        ${DESTROY_BTN}
-    # Erwartung: kein "Milch kaufen" mehr in der Liste
-    Get Count    ${LIST_ITEMS}    ==    1
+Resource            ${EXECDIR}/resources/keywords/keywords.resource
 
-TC3 Todo als erledigt markieren
-    Fill Text    ${INPUT}    Brot kaufen
-    Press Keys   ${INPUT}    Enter
-    Click        ${LIST_ITEMS} >> nth=0 >> ${TOGGLE}
-    Locator Should Have Attribute    ${LIST_ITEMS} >> nth=0    class    .*completed.*
+Suite Setup         Starte ToDoMVC
+Suite Teardown      Close Browser
+Test Setup          Todos Anlegen    Einkaufen gehen    Kochen    Sport machen
+Test Teardown       Todo Liste Leeren
 
-TC4 Filtern Active/Completed
-    Fill Text    ${INPUT}    Offen
-    Press Keys   ${INPUT}    Enter
-    Fill Text    ${INPUT}    Erledigt
-    Press Keys   ${INPUT}    Enter
-    Click        ${LIST_ITEMS} >> nth=1 >> ${TOGGLE}
-    Click        ${FILTER_ACTIVE}
-    Get Count    ${LIST_ITEMS}    ==    1
-    Click        ${FILTER_COMPLETED}
-    Get Count    ${LIST_ITEMS}    ==    1
-    Click        ${FILTER_ALL}
-    Get Count    ${LIST_ITEMS}    ==    2
+
+*** Test Cases ***
+TID-001: Todo Anlegen
+    [Documentation]    Tested die Funktion: Anlegen eines Todos
+    [Tags]    regression    tid-001
+    Todos Anlegen    Wohnung aufräumen
+    Vorhandene Todos    erwartete_anzahl=4
+    Take Screenshot
+
+TID-002: Todos auf erledigt setzen
+    [Documentation]    Testet Funktion: Erledigen eines Todos
+    [Tags]    regression    tid-002
+    Take Screenshot
+    Vorhandene Todos    erwartete_anzahl=3
+    Todos Als Erledigt Markieren    Einkaufen gehen    Kochen
+    Erledigte Todos    erwartete_anzahl=2
+    Take Screenshot
+
+TID-003: Erledigte Todos löschen
+    [Documentation]    Testet Funktion: Löschen eines Todos
+    [Tags]    regression    tid-003
+    Todos Als Erledigt Markieren    Sport machen
+    Erledigte Todos    erwartete_anzahl=1
+    Erledigte Todos Löschen
+    Erledigte Todos    erwartete_anzahl=0
+    Take Screenshot

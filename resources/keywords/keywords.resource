@@ -7,6 +7,7 @@ Resource            ${EXECDIR}/resources/pages/pages.resource
 
 *** Keywords ***
 # --- SETUP & TEARDOWN ----
+
 Starte ToDoMVC
     [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
     New Browser    ${BROWSER}    headless=${HEADLESS}
@@ -14,7 +15,13 @@ Starte ToDoMVC
     New Page    ${BASE_URL}
     Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
 
+Todo Liste Leeren
+    [Documentation]    Löscht alle vorhandenen Todos
+    Click    ${BUTTON_CHECK_ALL}
+    Click    ${BUTTON_CLEAR_COMPLETED}
+
 # --- User-Keywords ---
+
 Todos Anlegen
     [Documentation]    Legt beliebig viele Todos an.
     [Arguments]    @{todo_liste}
@@ -28,9 +35,11 @@ Vorhandene Todos
     [Arguments]    ${erwartete_anzahl}
     ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
     Log To Console    Vorhandene Todos: ${anzahl_todos}
-    Should Be Equal As Integers    ${anzahl_todos}    ${erwartete_anzahl}    msg=Erwartete Anzahl der Todos stimmt nicht
+    Should Be Equal As Integers
+    ...    ${anzahl_todos}
+    ...    ${erwartete_anzahl}
+    ...    msg=Erwartete Anzahl der Todos stimmt nicht
 
-    
 Todos Als Erledigt Markieren
     [Documentation]    Markiert alle übergebenen Todos als erledigt
     [Arguments]    @{todo_liste}
@@ -47,19 +56,11 @@ Erledigte Todos
     ...    ${erwartete_anzahl}
     ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
 
-Todos Löschen
-    [Documentation]    Löscht Todos je nach Status: alle | erledigt.
-    [Arguments]    ${status}=erledigt
-
-    ${selector}    Set Variable If
-    ...    '${status}'=='erledigt'    ${TODO_ITEM_ERLEDIGT}
-    ...    '${status}'=='alle'    ${TODO_ITEM}
-
+Erledigte Todos Löschen
+    [Documentation]    Löscht alle erledigten TodosWHILE
     WHILE    True
-        ${count}=    Get Element Count    ${selector}
+        ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
         IF    ${count} == 0    BREAK
-        Hover    ${selector} >> nth=0
-        Click    ${selector} >> nth=0 >> ${BTN_TODO_LÖSCHEN}
+        Hover    ${TODO_ITEM_ERLEDIGT}
+        Click    ${TODO_ITEM_ERLEDIGT} >> ${BUTTON_TODO_LÖSCHEN}
     END
-    ${remaining}=    Get Element Count    ${TODO_ITEM}
-    Log To Console    Verbleibende Todos (gesamt): ${remaining}
