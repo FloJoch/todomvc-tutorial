@@ -55,12 +55,3 @@ Erledigte Todos
     ...    ${erledigte_todos}
     ...    ${erwartete_anzahl}
     ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
-
-Erledigte Todos Löschen
-    [Documentation]    Löscht alle erledigten TodosWHILE
-    WHILE    True
-        ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
-        IF    ${count} == 0    BREAK
-        Hover    ${TODO_ITEM_ERLEDIGT}
-        Click    ${TODO_ITEM_ERLEDIGT} >> ${BUTTON_TODO_LÖSCHEN}
-    END

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.7 on win32)" generated="2025-11-20T17:02:13.945903" rpa="false" schemaversion="5">
+<suite id="s1" name="Todomvc-Tutorial" source="C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial">
+<suite id="s1-s1" name="Tests" source="C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial\tests">
+<suite id="s1-s1-s1" name="Testsuite" source="C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial\tests\testsuite.robot">
+<kw name="Starte ToDoMVC" owner="keywords" type="SETUP">
+<msg time="2025-11-20T17:02:14.760986" level="TRACE">Arguments: [  ]</msg>
+<kw name="New Browser" owner="Browser">
+<msg time="2025-11-20T17:02:14.774524" level="TRACE">Arguments: [ &lt;SupportedBrowsers.chromium: 1&gt; | headless=False ]</msg>
+<msg time="2025-11-20T17:02:14.778053" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\florian.jocham\\IdeaProjects\\todomvc-tutorial\\Logs\\browser\\traces\\temp\\39662f06-ed0d-4ee9-8965-073c7e400295"}</msg>
+<msg time="2025-11-20T17:02:15.015764" level="INFO">Starting Browser process c:\Users\florian.jocham\IdeaProjects\Python_Virtualenvs\python_3_12_7\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:62832</msg>
+<msg time="2025-11-20T17:02:15.030035" level="TRACE">Node startup parameters: ['node', 'c:\\Users\\florian.jocham\\IdeaProjects\\Python_Virtualenvs\\python_3_12_7\\Lib\\site-packages\\Browser\\wrapper\\index.js', '127.0.0.1', '62832']</msg>
+<msg time="2025-11-20T17:02:15.047723" level="DEBUG">Waiting for Playwright server at 127.0.0.1:62832 to start...</msg>
+<msg time="2025-11-20T17:02:17.163140" level="DEBUG">&lt;_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.UNAVAILABLE
+	details = "failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:62832: ConnectEx: Connection refused (Unable to retrieve error string -- 10061)"
+	debug_error_string = "UNKNOWN:Error received from peer  {grpc_message:"failed to connect to all addresses; last error: UNAVAILABLE: ipv4:127.0.0.1:62832: ConnectEx: Connection refused (Unable to retrieve error string -- 10061)", grpc_status:14}"
+&gt;</msg>
+<msg time="2025-11-20T17:02:17.264369" level="DEBUG">Waiting for Playwright server at 127.0.0.1:62832 to start...</msg>
+<msg time="2025-11-20T17:02:17.817772" level="TRACE">Connected to the playwright process at 127.0.0.1:62832: body: "OK"
+</msg>
+<msg time="2025-11-20T17:02:19.490600" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\florian.jocham\\IdeaProjects\\todomvc-tutorial\\Logs\\browser\\traces\\temp\\39662f06-ed0d-4ee9-8965-073c7e400295"}</msg>
+<msg time="2025-11-20T17:02:19.490600" level="TRACE">Return: 'browser=54c43d40-7baa-4d39-ae90-d7026a257099'</msg>
+<arg>${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-11-20T17:02:14.760986" elapsed="4.731836"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2025-11-20T17:02:19.496395" level="TRACE">Arguments: [  ]</msg>
+<msg time="2025-11-20T17:02:19.503659" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-11-20T17:02:19.568956" level="INFO">Successfully created context. </msg>
+<msg time="2025-11-20T17:02:19.568956" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2025-11-20T17:02:19.568956" level="TRACE">Return: 'context=c5ea8170-1d05-4065-9c0a-26e73e6b0f2f'</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-11-20T17:02:19.492822" elapsed="0.079928"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-11-20T17:02:19.577715" level="TRACE">Arguments: [ 'https://todomvc.com/examples/vue/dist/#/' ]</msg>
+<msg time="2025-11-20T17:02:21.077309" level="INFO">Successfully initialized new page object and opened url: https://todomvc.com/examples/vue/dist/#/</msg>
+<msg time="2025-11-20T17:02:21.079323" level="DEBUG">Video is not enabled.</msg>
+<msg time="2025-11-20T17:02:21.079323" level="TRACE">Return: {'page_id': 'page=8ecd3d25-743e-4beb-9674-ff1a62dece97', 'video_path': ''}</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-11-20T17:02:19.573579" elapsed="1.507759"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-11-20T17:02:21.085579" level="TRACE">Arguments: [ &lt;AssertionOperator.equal: '=='&gt; | 'TodoMVC: Vue' | message=' | FAIL | Titel stimmt nicht überein: https://todomvc.com/examples/vue/dist/#/' ]</msg>
+<msg time="2025-11-20T17:02:21.117699" level="DEBUG">Active page title is: TodoMVC: Vue</msg>
+<msg time="2025-11-20T17:02:21.125013" level="INFO">Title: 'TodoMVC: Vue'</msg>
+<msg time="2025-11-20T17:02:21.126029" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0404508113861084 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg time="2025-11-20T17:02:21.126029" level="TRACE">Return: 'TodoMVC: Vue'</msg>
+<arg>==</arg>
+<arg>${BASE_TITLE}</arg>
+<arg>message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.081338" elapsed="0.046706"/>
+</kw>
+<msg time="2025-11-20T17:02:21.128044" level="TRACE">Return: None</msg>
+<doc>Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.</doc>
+<status status="PASS" start="2025-11-20T17:02:14.760986" elapsed="6.369078"/>
+</kw>
+<test id="s1-s1-s1-t1" name="TID-001: Todo Anlegen" line="13">
+<kw name="Todos Anlegen" owner="keywords" type="SETUP">
+<msg time="2025-11-20T17:02:21.155862" level="TRACE">Arguments: [ @{todo_liste}=['Einkaufen gehen', 'Kochen', 'Sport machen'] ]</msg>
+<for flavor="IN">
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:21.169126" level="TRACE">Arguments: [ 'input.new-todo' | 'Einkaufen gehen' ]</msg>
+<msg time="2025-11-20T17:02:21.174813" level="INFO">Fills the text 'Einkaufen gehen' in the given field.</msg>
+<msg time="2025-11-20T17:02:21.385563" level="DEBUG">Fill text Einkaufen gehen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:21.385563" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.169126" elapsed="0.224074"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:21.396738" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:21.519766" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:21.521696" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.393200" elapsed="0.130522"/>
+</kw>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-11-20T17:02:21.168107" elapsed="0.355615"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:21.527506" level="TRACE">Arguments: [ 'input.new-todo' | 'Kochen' ]</msg>
+<msg time="2025-11-20T17:02:21.529529" level="INFO">Fills the text 'Kochen' in the given field.</msg>
+<msg time="2025-11-20T17:02:21.569607" level="DEBUG">Fill text Kochen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:21.569607" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.525486" elapsed="0.044121"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:21.581053" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:21.634759" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:21.634759" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.569607" elapsed="0.065152"/>
+</kw>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-11-20T17:02:21.525486" elapsed="0.109273"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:21.639936" level="TRACE">Arguments: [ 'input.new-todo' | 'Sport machen' ]</msg>
+<msg time="2025-11-20T17:02:21.639936" level="INFO">Fills the text 'Sport machen' in the given field.</msg>
+<msg time="2025-11-20T17:02:21.688831" level="DEBUG">Fill text Sport machen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:21.688831" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.639936" elapsed="0.048895"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:21.688831" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:21.736490" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:21.737990" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.688831" elapsed="0.050370"/>
+</kw>
+<var name="${todo}">Sport machen</var>
+<status status="PASS" start="2025-11-20T17:02:21.639936" elapsed="0.099265"/>
+</iter>
+<var>${todo}</var>
+<value>@{todo_liste}</value>
+<status status="PASS" start="2025-11-20T17:02:21.155862" elapsed="0.583339"/>
+</for>
+<msg time="2025-11-20T17:02:21.739201" level="TRACE">Return: None</msg>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<arg>Sport machen</arg>
+<doc>Legt beliebig viele Todos an.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.155862" elapsed="0.583339"/>
+</kw>
+<kw name="Todos Anlegen" owner="keywords">
+<msg time="2025-11-20T17:02:21.745456" level="TRACE">Arguments: [ @{todo_liste}=['Wohnung aufräumen'] ]</msg>
+<for flavor="IN">
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:21.753873" level="TRACE">Arguments: [ 'input.new-todo' | 'Wohnung aufräumen' ]</msg>
+<msg time="2025-11-20T17:02:21.753873" level="INFO">Fills the text 'Wohnung aufräumen' in the given field.</msg>
+<msg time="2025-11-20T17:02:21.796439" level="DEBUG">Fill text Wohnung aufräumen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:21.796439" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.751855" elapsed="0.048907"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:21.805020" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:21.850907" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:21.850907" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.802197" elapsed="0.048710"/>
+</kw>
+<var name="${todo}">Wohnung aufräumen</var>
+<status status="PASS" start="2025-11-20T17:02:21.749493" elapsed="0.105135"/>
+</iter>
+<var>${todo}</var>
+<value>@{todo_liste}</value>
+<status status="PASS" start="2025-11-20T17:02:21.747474" elapsed="0.107886"/>
+</for>
+<msg time="2025-11-20T17:02:21.855955" level="TRACE">Return: None</msg>
+<arg>Wohnung aufräumen</arg>
+<doc>Legt beliebig viele Todos an.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.743549" elapsed="0.112992"/>
+</kw>
+<kw name="Vorhandene Todos" owner="keywords">
+<msg time="2025-11-20T17:02:21.861651" level="TRACE">Arguments: [ ${erwartete_anzahl}='4' ]</msg>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-11-20T17:02:21.868856" level="TRACE">Arguments: [ 'ul.todo-list li' ]</msg>
+<msg time="2025-11-20T17:02:21.893113" level="TRACE">Return: 4</msg>
+<msg time="2025-11-20T17:02:21.893113" level="INFO">${anzahl_todos} = 4</msg>
+<var>${anzahl_todos}</var>
+<arg>${TODO_ITEM}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.864708" elapsed="0.035368"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<msg time="2025-11-20T17:02:21.900076" level="TRACE">Arguments: [ 'Vorhandene Todos: 4' ]</msg>
+<msg time="2025-11-20T17:02:21.904212" level="TRACE">Return: None</msg>
+<arg>Vorhandene Todos: ${anzahl_todos}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.900076" elapsed="0.006162"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-20T17:02:21.908263" level="TRACE">Arguments: [ 4 | '4' | msg='Erwartete Anzahl der Todos stimmt nicht' ]</msg>
+<msg time="2025-11-20T17:02:21.910707" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-11-20T17:02:21.910707" level="TRACE">Return: None</msg>
+<arg>${anzahl_todos}</arg>
+<arg>${erwartete_anzahl}</arg>
+<arg>msg=Erwartete Anzahl der Todos stimmt nicht</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.906238" elapsed="0.006491"/>
+</kw>
+<msg time="2025-11-20T17:02:21.912729" level="TRACE">Return: None</msg>
+<arg>erwartete_anzahl=4</arg>
+<doc>Prüft wie viele Todos noch offen sind</doc>
+<status status="PASS" start="2025-11-20T17:02:21.859429" elapsed="0.053300"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-11-20T17:02:21.921358" level="TRACE">Arguments: [  ]</msg>
+<msg time="2025-11-20T17:02:22.127276" level="DEBUG">Screenshot successfully captured to: C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial\Logs\browser\screenshot\robotframework-browser-screenshot-1.png</msg>
+<msg time="2025-11-20T17:02:22.133102" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-20T17:02:22.134465" level="TRACE">Return: 'C:\\Users\\florian.jocham\\IdeaProjects\\todomvc-tutorial\\Logs\\browser\\screenshot\\robotframework-browser-screenshot-1.png'</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-11-20T17:02:21.915355" elapsed="0.219110"/>
+</kw>
+<kw name="Todo Liste Leeren" owner="keywords" type="TEARDOWN">
+<msg time="2025-11-20T17:02:22.141363" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-20T17:02:22.145504" level="TRACE">Arguments: [ '#toggle-all-input' ]</msg>
+<msg time="2025-11-20T17:02:22.147525" level="INFO">Clicks the element '#toggle-all-input'.</msg>
+<msg time="2025-11-20T17:02:22.152871" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg time="2025-11-20T17:02:22.258916" level="DEBUG">Clicked element: '#toggle-all-input' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg time="2025-11-20T17:02:22.258916" level="TRACE">Return: None</msg>
+<arg>${BUTTON_CHECK_ALL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.141363" elapsed="0.117553"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-20T17:02:22.269864" level="TRACE">Arguments: [ 'button.clear-completed' ]</msg>
+<msg time="2025-11-20T17:02:22.271922" level="INFO">Clicks the element 'button.clear-completed'.</msg>
+<msg time="2025-11-20T17:02:22.274938" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg time="2025-11-20T17:02:22.427856" level="DEBUG">Clicked element: 'button.clear-completed' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg time="2025-11-20T17:02:22.427856" level="TRACE">Return: None</msg>
+<arg>${BUTTON_CLEAR_COMPLETED}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.266637" elapsed="0.161219"/>
+</kw>
+<msg time="2025-11-20T17:02:22.427856" level="TRACE">Return: None</msg>
+<doc>Löscht alle vorhandenen Todos</doc>
+<status status="PASS" start="2025-11-20T17:02:22.134465" elapsed="0.293391"/>
+</kw>
+<msg time="2025-11-20T17:02:22.447633" level="TRACE">Set timeout to: 10000</msg>
+<doc>Tested die Funktion: Anlegen eines Todos</doc>
+<tag>regression</tag>
+<tag>tid-001</tag>
+<status status="PASS" start="2025-11-20T17:02:21.130064" elapsed="1.297792"/>
+</test>
+<test id="s1-s1-s1-t2" name="TID-002: Todos auf erledigt setzen" line="20">
+<kw name="Todos Anlegen" owner="keywords" type="SETUP">
+<msg time="2025-11-20T17:02:22.483911" level="TRACE">Arguments: [ @{todo_liste}=['Einkaufen gehen', 'Kochen', 'Sport machen'] ]</msg>
+<for flavor="IN">
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:22.500534" level="TRACE">Arguments: [ 'input.new-todo' | 'Einkaufen gehen' ]</msg>
+<msg time="2025-11-20T17:02:22.500534" level="INFO">Fills the text 'Einkaufen gehen' in the given field.</msg>
+<msg time="2025-11-20T17:02:22.565359" level="DEBUG">Fill text Einkaufen gehen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:22.566780" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.496723" elapsed="0.070057"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:22.573833" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:22.619598" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:22.619598" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.569733" elapsed="0.056055"/>
+</kw>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-11-20T17:02:22.494698" elapsed="0.132491"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:22.634257" level="TRACE">Arguments: [ 'input.new-todo' | 'Kochen' ]</msg>
+<msg time="2025-11-20T17:02:22.634257" level="INFO">Fills the text 'Kochen' in the given field.</msg>
+<msg time="2025-11-20T17:02:22.670469" level="DEBUG">Fill text Kochen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:22.670469" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.630111" elapsed="0.040358"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:22.670469" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:22.719338" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:22.722057" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.670469" elapsed="0.051588"/>
+</kw>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-11-20T17:02:22.627189" elapsed="0.094868"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-11-20T17:02:22.728638" level="TRACE">Arguments: [ 'input.new-todo' | 'Sport machen' ]</msg>
+<msg time="2025-11-20T17:02:22.728638" level="INFO">Fills the text 'Sport machen' in the given field.</msg>
+<msg time="2025-11-20T17:02:22.772758" level="DEBUG">Fill text Sport machen on input.new-todo with force: false</msg>
+<msg time="2025-11-20T17:02:22.774798" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.726401" elapsed="0.050565"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<msg time="2025-11-20T17:02:22.776966" level="TRACE">Arguments: [ 'input.new-todo' | 'Enter' ]</msg>
+<msg time="2025-11-20T17:02:22.820993" level="DEBUG">Pressed keys: "Enter" on input.new-todo </msg>
+<msg time="2025-11-20T17:02:22.822216" level="TRACE">Return: None</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.776966" elapsed="0.045250"/>
+</kw>
+<var name="${todo}">Sport machen</var>
+<status status="PASS" start="2025-11-20T17:02:22.722057" elapsed="0.100159"/>
+</iter>
+<var>${todo}</var>
+<value>@{todo_liste}</value>
+<status status="PASS" start="2025-11-20T17:02:22.492382" elapsed="0.329834"/>
+</for>
+<msg time="2025-11-20T17:02:22.822216" level="TRACE">Return: None</msg>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<arg>Sport machen</arg>
+<doc>Legt beliebig viele Todos an.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.483911" elapsed="0.338305"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-11-20T17:02:22.837916" level="TRACE">Arguments: [  ]</msg>
+<msg time="2025-11-20T17:02:23.009036" level="DEBUG">Screenshot successfully captured to: C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial\Logs\browser\screenshot\robotframework-browser-screenshot-2.png</msg>
+<msg time="2025-11-20T17:02:23.017084" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-20T17:02:23.017084" level="TRACE">Return: 'C:\\Users\\florian.jocham\\IdeaProjects\\todomvc-tutorial\\Logs\\browser\\screenshot\\robotframework-browser-screenshot-2.png'</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-11-20T17:02:22.833348" elapsed="0.187790"/>
+</kw>
+<kw name="Vorhandene Todos" owner="keywords">
+<msg time="2025-11-20T17:02:23.025211" level="TRACE">Arguments: [ ${erwartete_anzahl}='3' ]</msg>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-11-20T17:02:23.025211" level="TRACE">Arguments: [ 'ul.todo-list li' ]</msg>
+<msg time="2025-11-20T17:02:23.046789" level="TRACE">Return: 3</msg>
+<msg time="2025-11-20T17:02:23.049831" level="INFO">${anzahl_todos} = 3</msg>
+<var>${anzahl_todos}</var>
+<arg>${TODO_ITEM}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.025211" elapsed="0.024620"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<msg time="2025-11-20T17:02:23.053507" level="TRACE">Arguments: [ 'Vorhandene Todos: 3' ]</msg>
+<msg time="2025-11-20T17:02:23.053507" level="TRACE">Return: None</msg>
+<arg>Vorhandene Todos: ${anzahl_todos}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.049831" elapsed="0.003676"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-20T17:02:23.061509" level="TRACE">Arguments: [ 3 | '3' | msg='Erwartete Anzahl der Todos stimmt nicht' ]</msg>
+<msg time="2025-11-20T17:02:23.061509" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-11-20T17:02:23.061509" level="TRACE">Return: None</msg>
+<arg>${anzahl_todos}</arg>
+<arg>${erwartete_anzahl}</arg>
+<arg>msg=Erwartete Anzahl der Todos stimmt nicht</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.053507" elapsed="0.008002"/>
+</kw>
+<msg time="2025-11-20T17:02:23.065692" level="TRACE">Return: None</msg>
+<arg>erwartete_anzahl=3</arg>
+<doc>Prüft wie viele Todos noch offen sind</doc>
+<status status="PASS" start="2025-11-20T17:02:23.023176" elapsed="0.043956"/>
+</kw>
+<kw name="Todos Als Erledigt Markieren" owner="keywords">
+<msg time="2025-11-20T17:02:23.070450" level="TRACE">Arguments: [ @{todo_liste}=['Einkaufen gehen', 'Kochen'] ]</msg>
+<for flavor="IN">
+<iter>
+<kw name="Check Checkbox" owner="Browser">
+<msg time="2025-11-20T17:02:23.074052" level="TRACE">Arguments: [ 'ul.todo-list li:has-text("Einkaufen gehen") input.toggle' ]</msg>
+<msg time="2025-11-20T17:02:23.214214" level="DEBUG">Checked checkbox: ul.todo-list li:has-text("Einkaufen gehen") input.toggle with force: false</msg>
+<msg time="2025-11-20T17:02:23.216158" level="TRACE">Return: None</msg>
+<arg>${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.074052" elapsed="0.142106"/>
+</kw>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-11-20T17:02:23.074052" elapsed="0.145558"/>
+</iter>
+<iter>
+<kw name="Check Checkbox" owner="Browser">
+<msg time="2025-11-20T17:02:23.219610" level="TRACE">Arguments: [ 'ul.todo-list li:has-text("Kochen") input.toggle' ]</msg>
+<msg time="2025-11-20T17:02:23.339284" level="DEBUG">Checked checkbox: ul.todo-list li:has-text("Kochen") input.toggle with force: false</msg>
+<msg time="2025-11-20T17:02:23.339284" level="TRACE">Return: None</msg>
+<arg>${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.219610" elapsed="0.119674"/>
+</kw>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-11-20T17:02:23.219610" elapsed="0.130791"/>
+</iter>
+<var>${todo}</var>
+<value>@{todo_liste}</value>
+<status status="PASS" start="2025-11-20T17:02:23.074052" elapsed="0.276349"/>
+</for>
+<msg time="2025-11-20T17:02:23.350401" level="TRACE">Return: None</msg>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<doc>Markiert alle übergebenen Todos als erledigt</doc>
+<status status="PASS" start="2025-11-20T17:02:23.070450" elapsed="0.283888"/>
+</kw>
+<kw name="Erledigte Todos" owner="keywords">
+<msg time="2025-11-20T17:02:23.354338" level="TRACE">Arguments: [ ${erwartete_anzahl}='2' ]</msg>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-11-20T17:02:23.361547" level="TRACE">Arguments: [ 'input.toggle:checked' ]</msg>
+<msg time="2025-11-20T17:02:23.382729" level="TRACE">Return: 2</msg>
+<msg time="2025-11-20T17:02:23.383896" level="INFO">${erledigte_todos} = 2</msg>
+<var>${erledigte_todos}</var>
+<arg>${CHECKBOX_TODO}:checked</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.354338" elapsed="0.031985"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-20T17:02:23.391032" level="TRACE">Arguments: [ 2 | '2' | 'message= | FAIL | 2 Todos sollten erledigt sein, aber 2 sind es.' ]</msg>
+<msg time="2025-11-20T17:02:23.393549" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2025-11-20T17:02:23.394870" level="TRACE">Return: None</msg>
+<arg>${erledigte_todos}</arg>
+<arg>${erwartete_anzahl}</arg>
+<arg>message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.387668" elapsed="0.007202"/>
+</kw>
+<msg time="2025-11-20T17:02:23.394870" level="TRACE">Return: None</msg>
+<arg>erwartete_anzahl=2</arg>
+<doc>Prüft wie viele Todos erledigt sind</doc>
+<status status="PASS" start="2025-11-20T17:02:23.354338" elapsed="0.042372"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-11-20T17:02:23.401267" level="TRACE">Arguments: [  ]</msg>
+<msg time="2025-11-20T17:02:23.598004" level="DEBUG">Screenshot successfully captured to: C:\Users\florian.jocham\IdeaProjects\todomvc-tutorial\Logs\browser\screenshot\robotframework-browser-screenshot-3.png</msg>
+<msg time="2025-11-20T17:02:23.603439" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-11-20T17:02:23.603439" level="TRACE">Return: 'C:\\Users\\florian.jocham\\IdeaProjects\\todomvc-tutorial\\Logs\\browser\\screenshot\\robotframework-browser-screenshot-3.png'</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.396710" elapsed="0.209642"/>
+</kw>
+<kw name="Todo Liste Leeren" owner="keywords" type="TEARDOWN">
+<msg time="2025-11-20T17:02:23.608345" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-20T17:02:23.615413" level="TRACE">Arguments: [ '#toggle-all-input' ]</msg>
+<msg time="2025-11-20T17:02:23.616539" level="INFO">Clicks the element '#toggle-all-input'.</msg>
+<msg time="2025-11-20T17:02:23.622147" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg time="2025-11-20T17:02:23.700797" level="DEBUG">Clicked element: '#toggle-all-input' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg time="2025-11-20T17:02:23.705131" level="TRACE">Return: None</msg>
+<arg>${BUTTON_CHECK_ALL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.608345" elapsed="0.096786"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-11-20T17:02:23.705131" level="TRACE">Arguments: [ 'button.clear-completed' ]</msg>
+<msg time="2025-11-20T17:02:23.714794" level="INFO">Clicks the element 'button.clear-completed'.</msg>
+<msg time="2025-11-20T17:02:23.719965" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}</msg>
+<msg time="2025-11-20T17:02:23.803355" level="DEBUG">Clicked element: 'button.clear-completed' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false, "trial": false}' successfully.</msg>
+<msg time="2025-11-20T17:02:23.803355" level="TRACE">Return: None</msg>
+<arg>${BUTTON_CLEAR_COMPLETED}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.705131" elapsed="0.098224"/>
+</kw>
+<msg time="2025-11-20T17:02:23.803355" level="TRACE">Return: None</msg>
+<doc>Löscht alle vorhandenen Todos</doc>
+<status status="PASS" start="2025-11-20T17:02:23.608345" elapsed="0.205531"/>
+</kw>
+<msg time="2025-11-20T17:02:23.826028" level="TRACE">Set timeout to: 10000</msg>
+<doc>Testet Funktion: Erledigen eines Todos</doc>
+<tag>regression</tag>
+<tag>tid-002</tag>
+<status status="PASS" start="2025-11-20T17:02:22.468152" elapsed="1.347724"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-11-20T17:02:23.850147" level="TRACE">Arguments: [  ]</msg>
+<msg time="2025-11-20T17:02:24.764150" level="INFO">Closed browser</msg>
+<msg time="2025-11-20T17:02:24.766699" level="TRACE">Return: None</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-20T17:02:23.847756" elapsed="0.920962"/>
+</kw>
+<doc>regressionstests für die TodoMVC-Anwendung.</doc>
+<status status="PASS" start="2025-11-20T17:02:14.011817" elapsed="10.756901"/>
+</suite>
+<status status="PASS" start="2025-11-20T17:02:14.006350" elapsed="10.793408"/>
+</suite>
+<status status="PASS" start="2025-11-20T17:02:13.955651" elapsed="10.844107"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">regression</stat>
+<stat pass="1" fail="0" skip="0">tid-001</stat>
+<stat pass="1" fail="0" skip="0">tid-002</stat>
+</tag>
+<suite>
+<stat name="Todomvc-Tutorial" id="s1" pass="2" fail="0" skip="0">Todomvc-Tutorial</stat>
+<stat name="Tests" id="s1-s1" pass="2" fail="0" skip="0">Todomvc-Tutorial.Tests</stat>
+<stat name="Testsuite" id="s1-s1-s1" pass="2" fail="0" skip="0">Todomvc-Tutorial.Tests.Testsuite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

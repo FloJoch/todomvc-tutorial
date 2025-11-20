@@ -170,11 +170,3 @@ TID-002: Todos auf erledigt setzen
     Erledigte Todos    erwartete_anzahl=2
     Take Screenshot
 
-TID-003: Erledigte Todos löschen
-    [Documentation]    Testet Funktion: Löschen eines Todos
-    [Tags]    regression    tid-003
-    Todos Als Erledigt Markieren    Sport machen
-    Erledigte Todos    erwartete_anzahl=1
-    Erledigte Todos Löschen
-    Erledigte Todos    erwartete_anzahl=0
-    Take Screenshot
