@@ -35,6 +35,6 @@ TID-003: Erledigte Todos löschen
     Todos Löschen    status=erledigt
     Erledigte Todos    erwartete_anzahl=0
     Vorhandene Todos
-
+    s
     Take Screenshot
 
