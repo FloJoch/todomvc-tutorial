@@ -37,7 +37,7 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
 - **Weitere Infos:** https://robotframework.org/foundation/
   
-  ![foundation-qr-code](/resources/images/qr-code.png)
+![foundation-qr-code](/resources/images/qr-code.png)
 
 ---
 
