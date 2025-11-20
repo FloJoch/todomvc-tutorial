@@ -37,7 +37,7 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
 - **Weitere Infos:** https://robotframework.org/foundation/
   
-  ![foundation-qr-code](resources/config/images/qr-code.png)
+  ![foundation-qr-code](/resources/images/qr-code.png)
 
 ---
 
@@ -61,9 +61,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
   - **TC2 – Todo löschen**  
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
-
-  - **TC3 – Als erledigt markieren**  
-    ![Jira TC3 – Erledigt](docs/img/tc3_jira.png "TC3 Jira Screenshot")
 
 ---
 **Beispiel-Suite (Minimalfassung):**
