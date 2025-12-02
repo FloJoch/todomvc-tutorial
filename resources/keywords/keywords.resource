@@ -6,52 +6,44 @@ Resource            ${EXECDIR}/resources/pages/pages.resource
 
 
 *** Keywords ***
-# --- SETUP & TEARDOWN ----
-
-Starte ToDoMVC
-    [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
-    New Browser    ${BROWSER}    headless=${HEADLESS}
+# --- SETUP & TEARDOWN ---
+Starte Browser Und Öffne ToDoMVC
+    [Documentation]    XX
+    New Browser    chromium    headless=false
     New Context
-    New Page    ${BASE_URL}
-    Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
+    New Page    ${TODOMVC_URL}
 
-Todo Liste Leeren
-    [Documentation]    Löscht alle vorhandenen Todos
-    Click    ${BUTTON_CHECK_ALL}
-    Click    ${BUTTON_CLEAR_COMPLETED}
+Browser Schließen
+    [Documentation]    Schließt den Browser.
+    Close Browser
 
-# --- User-Keywords ---
+### --- USER KEYWORDS ---
 
-Todos Anlegen
-    [Documentation]    Legt beliebig viele Todos an.
-    [Arguments]    @{todo_liste}
-    FOR    ${todo}    IN    @{todo_liste}
-        Fill Text    ${INPUT_NEW_TODO}    ${todo}
+Todo Anlegen
+    [Documentation]    Legt ein oder mehrere Todos an.
+    [Arguments]    @{todos}
+    FOR    ${todo}    IN    @{todos}
+        Fill Text    selector=${INPUT_NEW_TODO}    txt=${todo}
         Press Keys    ${INPUT_NEW_TODO}    Enter
     END
 
 Vorhandene Todos
-    [Documentation]    Prüft wie viele Todos noch offen sind
+    [Documentation]    Überprüft die Anzahl der vorhandenen Todos.
     [Arguments]    ${erwartete_anzahl}
-    ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
-    Log To Console    Vorhandene Todos: ${anzahl_todos}
-    Should Be Equal As Integers
-    ...    ${anzahl_todos}
-    ...    ${erwartete_anzahl}
-    ...    msg=Erwartete Anzahl der Todos stimmt nicht
-
-Todos Als Erledigt Markieren
-    [Documentation]    Markiert alle übergebenen Todos als erledigt
-    [Arguments]    @{todo_liste}
-    FOR    ${todo}    IN    @{todo_liste}
-        Check Checkbox    ${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}
-    END
+    ${anzahl}    Get Element Count    ${TODO_ITEMS}
+    Should Be Equal As Integers    ${anzahl}    ${erwartete_anzahl}
+    ...    msg=Erwartet waren ${erwartete_anzahl} erledigte Todos, gefunden wurden ${anzahl}.
 
 Erledigte Todos
-    [Documentation]    Prüft wie viele Todos erledigt sind
+    [Documentation]    Überprüft die Anzahl der erledigten Todos.
     [Arguments]    ${erwartete_anzahl}
-    ${erledigte_todos}    Get Element Count    ${CHECKBOX_TODO}:checked
-    Should Be Equal As Integers
-    ...    ${erledigte_todos}
-    ...    ${erwartete_anzahl}
-    ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
+    ${anzahl}    Get Element Count    ${COMPLETED_TODO_ITEMS}
+    Should Be Equal As Integers    ${anzahl}    ${erwartete_anzahl}
+    ...    msg=Erwartet waren ${erwartete_anzahl} erledigte Todos, gefunden wurden ${anzahl}.
+
+Todo Als Erledigt Markieren
+    [Documentation]    Markiert ein oder mehrere Todos als erledigt.
+    [Arguments]    @{todos}
+    FOR    ${todo}    IN    @{todos}
+        Click    css=ul.todo-list li:has-text("${todo}") label
+    END

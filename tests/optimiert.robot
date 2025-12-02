@@ -6,9 +6,9 @@ Resource            ${EXECDIR}/resources/keywords/keywords.resource
 Suite Setup         Starte ToDoMVC
 Suite Teardown      Close Browser
 Test Setup          Todos Anlegen
-...    Einkaufen gehen    
-...    Kochen    
-...    Sport machen
+...                     Einkaufen gehen
+...                     Kochen
+...                     Sport machen
 Test Teardown       Todo Liste Leeren
 
 
@@ -23,7 +23,6 @@ TID-001: Todo Anlegen
 TID-002: Todos auf erledigt setzen
     [Documentation]    Testet Funktion: Erledigen eines Todos
     [Tags]    regression    tid-002
-    Take Screenshot
     Vorhandene Todos    erwartete_anzahl=3
     Todos Als Erledigt Markieren    Einkaufen gehen    Kochen
     Erledigte Todos    erwartete_anzahl=2
