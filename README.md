@@ -46,7 +46,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
 **Weitere Infos:** https://robotframework.org/foundation/ 
 
-![foundation-qr-code](/resources/images/qr-code.png)
 
 ## Was zeichnet Robotframework aus?
 - **Lesbarkeit**
