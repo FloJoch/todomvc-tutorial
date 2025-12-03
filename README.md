@@ -89,8 +89,10 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - TodoMVC: https://todomvc.com/examples/vue/dist/#/
 
 - **Ziel-Testfälle**  
-  - TC1 – Todo's anlegen 
+  - TC1 – Todo's anlegen
+
     ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
 
-  - TC2 – Todo's als erledigt markieren löschen  
+  - TC2 – Todo's als erledigt markieren löschen
+    
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
