@@ -60,18 +60,12 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - **Flexibilität durch Libraries**
   - Heute Fokus: Browser-Tests mit **Browser Library**
   - Über Adaptionslayer aber auch:
-  - Datenbanken,
-  - APIs,
+    - Datenbanken,
+    - APIs
 
 - **Starke Community**
   - Viele Beispiele, Hilfe, Ideen
   - Macht Spaß, Teil davon zu sein
-
----
-
-## Libraries
-- **BuiltIn-Library** https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
-- **Browser-Library** https://marketsquare.github.io/robotframework-browser/Browser.html
 
 ---
 
@@ -90,13 +84,13 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
 ---
 
-## Demo-Setup (TodoMVC)
+## Demo-Setup TodoMVC
 - **Testobjekt:** 
   - TodoMVC: https://todomvc.com/examples/vue/dist/#/
 
-- **Ziel-Testfälle:**  
-  - **TC1 – Todo anlegen**  
+- **Ziel-Testfälle**  
+  - TC1 – Todo's anlegen 
     ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
 
-  - **TC2 – Todo löschen**  
+  - TC2 – Todo's als erledigt markieren löschen  
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
