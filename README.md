@@ -89,10 +89,36 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - TodoMVC: https://todomvc.com/examples/vue/dist/#/
 
 - **Testfälle**  
-  - TC1 – Todo's anlegen
+  - TC1 – Neue Todos können angelegt werden
 
     ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
+    1. TodoMVC-Seite öffnen.
+    2. Text in Eingabefeld eingeben.
+    3. Bestätigen.
+    4. Prüfen, dass Todo in der Liste erscheint.
+    5. Prüfen, wie viele Todos es insgesamt gibt.
 
-  - TC2 – Todo's als erledigt markieren löschen
+  - TC2 – Todos können als erledigt markiert werden
 
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
+
+---
+
+## Proojektstruktur
+- Ordner
+- .robot-Suites
+- Sections (Settings, Keywords, Variables, usw.)
+- Erster manueller Testfall anschauen
+  1. TodoMVC-Seite öffnen.
+  2. Text in Eingabefeld eingeben.
+  3. Bestätigen.
+  4. Prüfen, dass Todo in der Liste erscheint.
+  5. Prüfen, wie viele Todos es insgesamt gibt.
+- Übersetzung RF
+- Zweiter manueller Testfall anschauen
+  1. TodoMVC öffnen.
+  2. Neues Todo anlegen.
+  3. Todo als erledigt markieren.
+  4. Prüfen, dass Todo als erledigt dargestellt wird
+- Fertige Suite zeigen
+- Übergabe Murad Datadriver
