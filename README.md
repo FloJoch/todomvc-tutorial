@@ -86,21 +86,29 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
 ## Demo-Setup TodoMVC
 - **Testobjekt:** 
-  - TodoMVC: https://todomvc.com/examples/vue/dist/#/
+  - TodoMVC: https://todomvc.com/examples/react/dist/#/
 
 - **Testfälle**  
   - TC1 – Neue Todos können angelegt werden
 
     ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
-    1. TodoMVC-Seite öffnen.
-    2. Text in Eingabefeld eingeben.
-    3. Bestätigen.
-    4. Prüfen, dass Todo in der Liste erscheint.
-    5. Prüfen, wie viele Todos es insgesamt gibt.
+    1. TodoMVC öffnen
+    2. Todos Anlegen
+    3. Vorhandene Todos
+    4. Erledigte Todos
+    5. Screenshot
 
   - TC2 – Todos können als erledigt markiert werden
 
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
+    1. TodoMVC öffnen
+    2. Neue Todos anlegen
+    3. Vorhandene Todos
+    4. Erledigte Todos
+    5. Todo als erledigt markieren
+    6. Vorhandene Todos
+    7. Erledigte Todos
+    8. Take Screenshot
 
 ---
 
@@ -109,16 +117,20 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - .robot-Suites
 - Sections (Settings, Keywords, Variables, usw.)
 - Erster manueller Testfall anschauen
-  1. TodoMVC-Seite öffnen.
-  2. Text in Eingabefeld eingeben.
-  3. Bestätigen.
-  4. Prüfen, dass Todo in der Liste erscheint.
-  5. Prüfen, wie viele Todos es insgesamt gibt.
+    1. TodoMVC öffnen
+    2. Todos Anlegen
+    3. Vorhandene Todos
+    4. Erledigte Todos
+    5. Screenshot
 - Übersetzung RF
 - Zweiter manueller Testfall anschauen
-  1. TodoMVC öffnen.
-  2. Neues Todo anlegen.
-  3. Todo als erledigt markieren.
-  4. Prüfen, dass Todo als erledigt dargestellt wird
+    1. TodoMVC öffnen
+    2. Neue Todos anlegen
+    3. Vorhandene Todos
+    4. Erledigte Todos
+    5. Todo als erledigt markieren
+    6. Vorhandene Todos
+    7. Erledigte Todos
+    8. Take Screenshot
 - Fertige Suite zeigen
 - Übergabe Murad Datadriver
