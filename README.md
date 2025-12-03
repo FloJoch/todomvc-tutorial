@@ -45,6 +45,7 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - Events wie die Robocon
 
 **Weitere Infos:** https://robotframework.org/foundation/ 
+
 ![foundation-qr-code](/resources/images/qr-code.png)
 
 ## Was zeichnet Robotframework aus?
@@ -86,15 +87,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
     - Mehr Wiederverwendung
     - Datengetriebene Tests
 
----
-
-## CLI – Wichtige Commands
-
-- **robot** – Führt Robot-Tests aus und erzeugt `output.xml`, `log.html` und `report.html`.  
-  Beispiel: `robot -d results tests/`
-
-- **libdoc** – Generiert Keyword-Dokumentation (HTML/JSON/XML) aus Libraries oder Resource-Files.  
-  Beispiel: `python -m robot.libdoc resources/keywords/keywords.resource doku/keyworddoku.html`
 
 ---
 
