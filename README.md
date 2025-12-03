@@ -2,13 +2,63 @@
 _Aus manuellen Schritten werden lauffähige Suites._
 
 ---
-
-## Motivation
-- Durch Glück bei der Stadt ins Testing gerutscht
+# Motivation
+## Kurzvorstellung 
+- Testanalyst bei der Landeshauptstadt München
 - Duales Studium Wirtschaftsinformatik, schlechte Vorbereitung aufs Berufsleben
+- Studium
+  - Programmieren eher oberflächlich => Ohne eine Zeile Code durchs Studium
+  - Testen nur als kleiner Teil im SDLC, wenig Tiefe
+- Ergebnis nach dem Studium
+  - Kaum Vorstellung von professionellem Testen
+  - Praktisch keine Erfahrung mit Testautomatisierung
 - Wenig Programmierkenntnis, Robot Framework leichter Einstieg in die Entwicklung
-- Erste manuelle Tests binnen kurzer Zeit auf die Beine gestellt
 
+## Einstieg ins Testen
+- Durch Zufall Einstieg in Projekt als Tester gerutscht
+- Durch erfahrene Kollegen ans Thema Testing herangeführt wurden
+- Erste Schritte:
+  - manuelle Tests in Jira
+  - Klassisch: Schritt für Schritt, erwartetes Ergebnis, etc
+- Irgendwann: „Klicke hier, prüfe da, blablabla…“ → wird schnell langweilig und nicht tragbar
+  - => Automatisierung
+
+## Erster Kontakt mit Robot Framework
+- Hinführung durch erfahrene Kollegen
+  - RF lauffähig einrichten
+  - Kleine Demo & generelle Einführung
+- Erste Reaktion
+  - Respekt/Angst wegen kaum technischer Erfahrung
+- Erkenntnis
+  - Einstieg ist einfacher als gedacht
+  - erste Automatisierte Tests waren schnell geschrieben
+  - Schnelle Lösung != gute Lösung 
+
+---
+
+# Ziel der Session
+- Workflow vom manuellen Test zur automatisierten Suite
+- Live-Demo in den Start eines Robot Framework Projekts
+  - Wo lohnt sich ein eigenes Keyword?
+  - Wie kann ich Tests robust gegen Änderungen halten?
+- Fragen? Bitte jederzeit, nicht erst am Ende
+- Danach
+  - Murad zeigt wie er die Suite für die Datadriver-Library umbaut
+    - Weniger Duplikation
+    - Mehr Wiederverwendung
+    - Datengetriebene Tests
+
+---
+
+## Key Facts zu Robot Framework
+- Generisches, Open-Source Automatisierungsframework für RPA und Testautomatisierung
+- Robot Framework Foundation
+  - Non-Profit Organisation hinter RF
+  - Bewerben Verwendung, kümmern sich um die Weiterentwicklung, sichern das RF Open Source bleibt
+  - Unterstützt Community
+  - Events wie die Robocon
+
+## Robot Framework USP
 
 ---
 
@@ -61,117 +111,3 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
   - **TC2 – Todo löschen**  
     ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
-
----
-**Beispiel-Suite (Minimalfassung):**
-```robot
-*** Settings ***
-Library           Browser
-Suite Setup         Starte ToDoMVC
-Suite Teardown      Close Browser
-Test Setup          
-...    Todos Anlegen
-...    Einkaufen gehen
-...    Kochen
-...    Sport machen
-
-
-
-*** Variables ***
-${INPUT_NEW_TODO}               input.new-todo
-${TODO_LIST}                    ul.todo-list
-${TODO_ITEM}                    ul.todo-list li
-${CHECKBOX_TODO}                input.toggle
-${TODO_ITEM_ERLEDIGT}           ul.todo-list li:has(input.toggle:checked)
-${TODO_ITEM_NICHT_ERLEDIGT}     ul.todo-list li:has(input.toggle:not(:checked))
-${BTN_TODO_LÖSCHEN}             .destroy
-
-*** Keywords ***
-# --- SETUP & TEARDOWN ----
-
-Starte ToDoMVC
-    [Documentation]    Startet den Browser und die Anwendung mit den konfigurierten Einstellungen.
-    New Browser    ${BROWSER}    headless=${HEADLESS}
-    New Context
-    New Page    ${BASE_URL}
-    Get Title    ==    ${BASE_TITLE}    message= | FAIL | Titel stimmt nicht überein: ${BASE_URL}
-
-Todo Liste Leeren
-    [Documentation]    Löscht alle vorhandenen Todos
-    Click    ${BTN_CHECK_ALL}
-    Click    ${BTN_CLEAR_COMPLETED}
-
-# --- User-Keywords ---
-
-Todos Anlegen
-    [Documentation]    Legt beliebig viele Todos an.
-    [Arguments]    @{todo_liste}
-    FOR    ${todo}    IN    @{todo_liste}
-        Fill Text    ${INPUT_NEW_TODO}    ${todo}
-        Press Keys    ${INPUT_NEW_TODO}    Enter
-    END
-
-Vorhandene Todos
-    [Documentation]    Prüft wie viele Todos noch offen sind
-    [Arguments]    ${erwartete_anzahl}
-    ${anzahl_todos}    Get Element Count    ${TODO_ITEM}
-    Log To Console    Vorhandene Todos: ${anzahl_todos}
-    Should Be Equal As Integers
-    ...    ${anzahl_todos}
-    ...    ${erwartete_anzahl}
-    ...    msg=Erwartete Anzahl der Todos stimmt nicht
-
-Todos Als Erledigt Markieren
-    [Documentation]    Markiert alle übergebenen Todos als erledigt
-    [Arguments]    @{todo_liste}
-    FOR    ${todo}    IN    @{todo_liste}
-        Check Checkbox    ${TODO_ITEM}:has-text("${todo}") ${CHECKBOX_TODO}
-    END
-
-Erledigte Todos
-    [Documentation]    Prüft wie viele Todos erledigt sind
-    [Arguments]    ${erwartete_anzahl}
-    ${erledigte_todos}    Get Element Count    ${CHECKBOX_TODO}:checked
-    Should Be Equal As Integers
-    ...    ${erledigte_todos}
-    ...    ${erwartete_anzahl}
-    ...    message= | FAIL | ${erwartete_anzahl} Todos sollten erledigt sein, aber ${erledigte_todos} sind es.
-
-Erledigte Todos Löschen
-    [Documentation]    Löscht alle erledigten TodosWHILE
-    WHILE    True
-        ${count}    Get Element Count    ${TODO_ITEM_ERLEDIGT}
-        IF    ${count} == 0    BREAK
-        Hover    ${TODO_ITEM_ERLEDIGT}
-        Click    ${TODO_ITEM_ERLEDIGT} >> ${BTN_TODO_LÖSCHEN}
-    END
-
-*** Test Cases ***
-*** Settings ***
-Documentation       regressionstests für die TodoMVC-Anwendung.
-
-Resource            ${EXECDIR}/resources/keywords/keywords.resource
-
-Suite Setup         Starte ToDoMVC
-Suite Teardown      Close Browser
-Test Setup          Todos Anlegen    Einkaufen gehen    Kochen    Sport machen
-Test Teardown       Todo Liste Leeren
-
-
-*** Test Cases ***
-TID-001: Todo Anlegen
-    [Documentation]    Tested die Funktion: Anlegen eines Todos
-    [Tags]    regression    tid-001
-    Todos Anlegen    Wohnung aufräumen
-    Vorhandene Todos    erwartete_anzahl=4
-    Take Screenshot
-
-TID-002: Todos auf erledigt setzen
-    [Documentation]    Testet Funktion: Erledigen eines Todos
-    [Tags]    regression    tid-002
-    Take Screenshot
-    Vorhandene Todos    erwartete_anzahl=3
-    Todos Als Erledigt Markieren    Einkaufen gehen    Kochen
-    Erledigte Todos    erwartete_anzahl=2
-    Take Screenshot
-
