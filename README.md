@@ -28,25 +28,11 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - RF lauffähig einrichten
   - Kleine Demo & generelle Einführung
 - Erste Reaktion
-  - Respekt/Angst wegen kaum technischer Erfahrung
+  - Respekt/Angst wegen kaum Programmier-Erfahrung
 - Erkenntnis
   - Einstieg ist einfacher als gedacht
   - erste Automatisierte Tests waren schnell geschrieben
   - Schnelle Lösung != gute Lösung 
-
----
-
-# Ziel der Session
-- Workflow vom manuellen Test zur automatisierten Suite
-- Live-Demo in den Start eines Robot Framework Projekts
-  - Wo lohnt sich ein eigenes Keyword?
-  - Wie kann ich Tests robust gegen Änderungen halten?
-- Fragen? Bitte jederzeit, nicht erst am Ende
-- Danach
-  - Murad zeigt wie er die Suite für die Datadriver-Library umbaut
-    - Weniger Duplikation
-    - Mehr Wiederverwendung
-    - Datengetriebene Tests
 
 ---
 
@@ -58,7 +44,27 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - Unterstützt Community
   - Events wie die Robocon
 
-## Robot Framework USP
+**Weitere Infos:** https://robotframework.org/foundation/ 
+![foundation-qr-code](/resources/images/qr-code.png)
+
+## Was zeichnet Robotframework aus?
+- **Lesbarkeit**
+  - Tests sehen aus wie Checklisten
+  - Fachbereiche können oft direkt mitlesen, was der Test macht
+
+- **Keyword-Driven Ansatz**
+  - Keywords ≈ Bausteine / Methoden
+  - Eigene User-Keywords aus Low-Level Library-Keywords zusammensetzen
+
+- **Flexibilität durch Libraries**
+  - Heute Fokus: Browser-Tests mit **Browser Library**
+  - Über Adaptionslayer aber auch:
+  - Datenbanken,
+  - APIs,
+
+- **Starke Community**
+  - Viele Beispiele, Hilfe, Ideen
+  - Macht Spaß, Teil davon zu sein
 
 ---
 
@@ -68,26 +74,17 @@ _Aus manuellen Schritten werden lauffähige Suites._
 
 ---
 
-## TL;DR
-- **Was?** Mini-Demo: Manuelle Testfälle → Robot-Tests (TodoMVC).
-- **Für wen?** Einsteiger & Praktiker, die manuelle Tests zügig automatisieren wollen.
-
----
-
-## Robot Framework – Kurzüberblick
-- **Open Source:** Generisches Testautomatisierungs-Framework für **Akkzeptanztests**, **Systemtests**, **E2E-Tests** und vieles mehr.
-- **Anwendungsbereiche:** Testautomatisierung und Robotic Process Automation (RPA)
-- **Spezifikationsstyle:** Keyword-Driven, Behavior-Driven (Gherkin), Data-Driven  
-- **Stärken:** Lesbarkeit, Wiederverwendung, Sehr aktive Community, leichter Einstieg für Nutzer ohne viel Entwicklungserfahrung
-
----
-
-## Robot Framework Foundation
-- **Non-Profit** Organisation zur Förderung von Robot Framework & Ökosystem.  
-- **Rolle:** Events, Konferenzen (Robocon), Communitysupport, Freie Nutzung und Weiterentwicklung, Finanzierung des Core-Developments
-- **Weitere Infos:** https://robotframework.org/foundation/
-  
-![foundation-qr-code](/resources/images/qr-code.png)
+## Ziel der Session
+- Workflow vom manuellen Test zur automatisierten Suite
+- Live-Demo in den Start eines Robot Framework Projekts
+  - Wo lohnt sich ein eigenes Keyword?
+  - Wie kann ich Tests robust gegen Änderungen halten?
+- Fragen? Bitte jederzeit, nicht erst am Ende
+- Danach
+  - Murad zeigt wie er die Suite für die Datadriver-Library umbaut
+    - Weniger Duplikation
+    - Mehr Wiederverwendung
+    - Datengetriebene Tests
 
 ---
 
