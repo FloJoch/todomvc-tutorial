@@ -61,7 +61,8 @@ _Aus manuellen Schritten werden lauffähige Suites._
   - Heute Fokus: Browser-Tests mit **Browser Library**
   - Über Adaptionslayer aber auch:
     - Datenbanken,
-    - APIs
+    - APIs,
+    - uvm.
 
 - **Starke Community**
   - Viele Beispiele, Hilfe, Ideen
