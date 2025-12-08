@@ -3,27 +3,31 @@ Documentation       regressionstests für die TodoMVC-Anwendung.
 
 Resource            ${EXECDIR}/resources/keywords/keywords.resource
 
-Suite Setup         Starte ToDoMVC
+Suite Setup         Starte Browser Und Öffne ToDoMVC
 Suite Teardown      Close Browser
-Test Setup          Todos Anlegen
+Test Setup          Todo Anlegen
 ...                     Einkaufen gehen
 ...                     Kochen
 ...                     Sport machen
-Test Teardown       Todo Liste Leeren
+# Test Teardown    Lösche Alle Todos
 
 
 *** Test Cases ***
-TID-001: Todo Anlegen
-    [Documentation]    Tested die Funktion: Anlegen eines Todos
-    [Tags]    regression    tid-001
-    Todos Anlegen    Wohnung aufräumen
+Neues Todo kann angelegt werden
+    [Documentation]    Legt ein neues Todo an und prüft, dass genau ein Todo vorhanden ist.
+    Todo Anlegen    Wohnung aufräumen
     Vorhandene Todos    erwartete_anzahl=4
     Take Screenshot
 
-TID-002: Todos auf erledigt setzen
-    [Documentation]    Testet Funktion: Erledigen eines Todos
-    [Tags]    regression    tid-002
-    Vorhandene Todos    erwartete_anzahl=3
-    Todos Als Erledigt Markieren    Einkaufen gehen    Kochen
+Todo kann als erledigt markiert werden
+    [Documentation]    Legt mehrere Todos an, markiert sie als erledigt und prüft die Anzahl der erledigten Todos.
+    Todo Anlegen
+    ...    Wohnung aufräumen
+    ...    Gartenarbeit
+    Vorhandene Todos    erwartete_anzahl=5
+    Todo Als Erledigt Markieren
+    ...    Wohnung aufräumen
+    ...    Gartenarbeit
+    Vorhandene Todos    erwartete_anzahl=5
     Erledigte Todos    erwartete_anzahl=2
     Take Screenshot
