@@ -9,24 +9,14 @@ _Aus manuellen Schritten werden lauffähige Suites._
 - Studium
   - Programmieren eher oberflächlich => Ohne eine Zeile Code durchs Studium
   - Testen nur als kleiner Teil im SDLC, wenig Tiefe
-- Ergebnis nach dem Studium
-  - Kaum Vorstellung von professionellem Testen
-  - Praktisch keine Erfahrung mit Testautomatisierung
-- Wenig Programmierkenntnis, Robot Framework leichter Einstieg in die Entwicklung
-
-## Einstieg ins Testen
-- Durch Zufall Einstieg in Projekt als Tester gerutscht
-- Durch erfahrene Kollegen ans Thema Testing herangeführt wurden
-- Erste Schritte:
-  - manuelle Tests in Jira
-  - Klassisch: Schritt für Schritt, erwartetes Ergebnis, etc
+  - Wenig Programmierkenntnis, Robot Framework leichter Einstieg in die Entwicklung
+  - Durch Zufall Einstieg in Projekt als Tester gerutscht
+  - Durch erfahrene Kollegen ans Thema Testing herangeführt wurden
+  - Erste Schritte:
+    - manuelle Tests in Jira
 - Irgendwann: „Klicke hier, prüfe da, blablabla…“ → wird schnell langweilig und nicht tragbar
   - => Automatisierung
-
-## Erster Kontakt mit Robot Framework
-- Hinführung durch erfahrene Kollegen
-  - RF lauffähig einrichten
-  - Kleine Demo & generelle Einführung
+  - Hinführung durch erfahrene Kollegen
 - Erste Reaktion
   - Respekt/Angst wegen kaum Programmier-Erfahrung
 - Erkenntnis
