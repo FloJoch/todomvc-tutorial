@@ -20,13 +20,25 @@ ${COMPLETED_TODO_ITEMS}     css=li.completed[data-testid="todo-item"]
 
 
 *** Test Cases ***
-Neues Todo kann angelegt werden
+TC1: Neues Todo kann angelegt werden
     [Documentation]    Prüft die Funktionalität zum Anlegen eines neuen Todos.
     Starte Browser Und Öffne ToDoMVC
+    # ---
+    # Neues Todo Anlegen
+    # ---
+    # Prüfe Anzahl Angelegter Todos
+    # ---
+    Take Screenshot
 
-Todo kann als erledigt markiert werden
+TC2: Todo kann als erledigt markiert werden
     [Documentation]    Prüft die Funktionalität ein Todo als erledigt zu markieren.
     Starte Browser Und Öffne ToDoMVC
+    # ---
+    # Todo Als Erledigt Markieren
+    # ---
+    # Prüfe Anzahl Erledigter Todos
+    # ---
+    Take Screenshot
 
 
 *** Keywords ***
@@ -46,12 +58,12 @@ Vorhandene Todos
     [Arguments]    ${erwartete_anzahl}
     Log    tbd
 
-Todo Erledigen
+Prüfe Anzahl Der Angelegten Todos
     [Documentation]    [data-testid=todo-list] li:has-text("${todo}") input.toggle
     [Arguments]    @{todos}
     Log    tbd
 
-Erledigte Todos
+Prüfe Anzahl Erledigter Todos
     [Documentation]    xx
     [Arguments]    ${erwarteten_anzahl}
     Log    tbd
