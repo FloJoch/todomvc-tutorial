@@ -31,7 +31,7 @@ Todo Als Erledigt Markieren
     [Documentation]    Markiert alle übergebenen Todos anhand ihres Namens als erledigt.
     [Arguments]    @{todos}
     FOR    ${todo}    IN    @{todos}
-        Click    css=ul.todo-list li:has-text("${todo}") input.toggle
+        Click    [data-testid=todo-list] li:has-text("${todo}") input.toggle
     END
 
 Erledigte Todos
@@ -40,3 +40,12 @@ Erledigte Todos
     ${anzahl}    Get Element Count    ${COMPLETED_TODO_ITEMS}
     Should Be Equal As Integers    ${anzahl}    ${erwartete_anzahl}
     ...    msg=Erwartet waren ${erwartete_anzahl} erledigte Todos, gefunden wurden ${anzahl}.
+
+Alle Todos Löschen
+    [Documentation]    Löscht alle vorhandenen Todos durch wiederholtes Löschen des ersten Eintrags.
+    WHILE    ${True}
+        ${count}    Get Element Count    css=.todo-list li
+        IF    ${count} == 0    BREAK
+        Hover    css=.todo-list li >> nth=0
+        Click    css=.todo-list li >> nth=0 >> .destroy
+    END

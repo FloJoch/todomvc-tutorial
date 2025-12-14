@@ -9,7 +9,7 @@ Test Setup          Todo Anlegen
 ...                     Einkaufen gehen
 ...                     Kochen
 ...                     Sport machen
-# Test Teardown    Lösche Alle Todos
+Test Teardown       Alle Todos Löschen
 
 
 *** Test Cases ***
@@ -21,7 +21,7 @@ Neues Todo kann angelegt werden
 Todo kann als erledigt markiert werden
     [Documentation]    Legt mehrere Todos an, markiert sie als erledigt und prüft die Anzahl der erledigten Todos.
     Todo Als Erledigt Markieren
-    ...    Wohnung aufräumen
-    ...    Gartenarbeit
+    ...    Einkaufen gehen
+    ...    Kochen
     Erledigte Todos    erwartete_anzahl=2
     Take Screenshot

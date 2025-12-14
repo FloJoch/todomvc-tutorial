@@ -2,29 +2,6 @@
 _Aus manuellen Schritten werden lauffähige Suites._
 
 ---
-# Motivation
-## Kurzvorstellung 
-- Testanalyst bei der Landeshauptstadt München
-- Duales Studium Wirtschaftsinformatik, schlechte Vorbereitung aufs Berufsleben
-- Studium
-  - Programmieren eher oberflächlich => Ohne eine Zeile Code durchs Studium
-  - Testen nur als kleiner Teil im SDLC, wenig Tiefe
-  - Wenig Programmierkenntnis, Robot Framework leichter Einstieg in die Entwicklung
-  - Durch Zufall Einstieg in Projekt als Tester gerutscht
-  - Durch erfahrene Kollegen ans Thema Testing herangeführt wurden
-  - Erste Schritte:
-    - manuelle Tests in Jira
-- Irgendwann: „Klicke hier, prüfe da, blablabla…“ → wird schnell langweilig und nicht tragbar
-  - => Automatisierung
-  - Hinführung durch erfahrene Kollegen
-- Erste Reaktion
-  - Respekt/Angst wegen kaum Programmier-Erfahrung
-- Erkenntnis
-  - Einstieg ist einfacher als gedacht
-  - erste Automatisierte Tests waren schnell geschrieben
-  - Schnelle Lösung != gute Lösung 
-
----
 
 ## Key Facts zu Robot Framework
 - Generisches, Open-Source Automatisierungsframework für RPA und Testautomatisierung
@@ -62,11 +39,9 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ## Ziel der Session
 - Workflow vom manuellen Test zur automatisierten Suite
 - Live-Demo in den Start eines Robot Framework Projekts
-  - Wo lohnt sich ein eigenes Keyword?
-  - Wie kann ich Tests robust gegen Änderungen halten?
-- Fragen? Bitte jederzeit, nicht erst am Ende
-- Danach
-  - Murad zeigt wie er die Suite für die Datadriver-Library umbaut
+  - Browser Library
+  - Keyword Driven
+  - Datadriver-Library
     - Weniger Duplikation
     - Mehr Wiederverwendung
     - Datengetriebene Tests
@@ -77,28 +52,6 @@ _Aus manuellen Schritten werden lauffähige Suites._
 ## Demo-Setup TodoMVC
 - **Testobjekt:** 
   - TodoMVC: https://todomvc.com/examples/react/dist/#/
-
-- **Testfälle**  
-  - TC1 – Neue Todos können angelegt werden
-
-    ![Jira TC1 – Anlegen](docs/img/tc1_jira.png "TC1 Jira Screenshot")
-    1. TodoMVC öffnen
-    2. Todos Anlegen
-    3. Vorhandene Todos
-    4. Erledigte Todos
-    5. Screenshot
-
-  - TC2 – Todos können als erledigt markiert werden
-
-    ![Jira TC2 – Löschen](docs/img/tc2_jira.png "TC2 Jira Screenshot")
-    1. TodoMVC öffnen
-    2. Neue Todos anlegen
-    3. Vorhandene Todos
-    4. Erledigte Todos
-    5. Todo als erledigt markieren
-    6. Vorhandene Todos
-    7. Erledigte Todos
-    8. Take Screenshot
 
 ---
 
