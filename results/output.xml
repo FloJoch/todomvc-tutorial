@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-12-14T21:12:15.038944" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.13.9 on win32)" generated="2025-12-15T15:08:30.734083" rpa="false" schemaversion="5">
 <suite id="s1" name="Todomvc-Tutorial" source="C:\Projects\todomvc-tutorial">
 <suite id="s1-s1" name="Tests" source="C:\Projects\todomvc-tutorial\tests">
-<suite id="s1-s1-s1" name="Live2" source="C:\Projects\todomvc-tutorial\tests\live2.robot">
-<test id="s1-s1-s1-t1" name="TC1: Neues Todo kann angelegt werden" line="23">
-<kw name="Starte Browser Und Öffne ToDoMVC">
+<suite id="s1-s1-s1" name="Optimiert" source="C:\Projects\todomvc-tutorial\tests\optimiert.robot">
+<kw name="Starte Browser Und Öffne ToDoMVC" owner="keywords" type="SETUP">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-12-14T21:12:15.282517" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Projects\\todomvc-tutorial\\results\\browser\\traces\\temp\\a0dc3f43-76a4-4b78-9828-aa54d8edc196"}</msg>
-<msg time="2025-12-14T21:12:15.303813" level="INFO">Starting Browser process C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:57054</msg>
-<msg time="2025-12-14T21:12:16.504344" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Projects\\todomvc-tutorial\\results\\browser\\traces\\temp\\a0dc3f43-76a4-4b78-9828-aa54d8edc196"}</msg>
+<msg time="2025-12-15T15:08:30.930766" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Projects\\todomvc-tutorial\\results\\browser\\traces\\temp\\10fd3553-c593-4a2d-a21a-818839447a57"}</msg>
+<msg time="2025-12-15T15:08:30.948811" level="INFO">Starting Browser process C:\Projects\todomvc-tutorial\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:49748</msg>
+<msg time="2025-12-15T15:08:32.128844" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Projects\\todomvc-tutorial\\results\\browser\\traces\\temp\\10fd3553-c593-4a2d-a21a-818839447a57"}</msg>
 <arg>chromium</arg>
 <arg>headless=${False}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-12-14T21:12:15.281728" elapsed="1.223011"/>
+<status status="PASS" start="2025-12-15T15:08:30.930107" elapsed="1.199283"/>
 </kw>
 <kw name="New Context" owner="Browser">
-<msg time="2025-12-14T21:12:16.506805" level="INFO">{
+<msg time="2025-12-15T15:08:32.131586" level="INFO">{
   "acceptDownloads": true,
   "bypassCSP": false,
   "forcedColors": "none",
@@ -31,35 +30,36 @@
     "height": 720
   }
 }</msg>
-<msg time="2025-12-14T21:12:16.521882" level="INFO">Successfully created context. </msg>
-<msg time="2025-12-14T21:12:16.522195" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<msg time="2025-12-15T15:08:32.145124" level="INFO">Successfully created context. </msg>
+<msg time="2025-12-15T15:08:32.145319" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.505081" elapsed="0.017377"/>
+<status status="PASS" start="2025-12-15T15:08:32.129772" elapsed="0.015781"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-12-14T21:12:16.811560" level="INFO">Successfully initialized new page object and opened url: https://todomvc.com/examples/react/dist/#/</msg>
-<arg>https://todomvc.com/examples/react/dist/#/</arg>
+<msg time="2025-12-15T15:08:32.443789" level="INFO">Successfully initialized new page object and opened url: https://todomvc.com/examples/react/dist/#/</msg>
+<arg>${TODOMVC_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.522727" elapsed="0.289123"/>
+<status status="PASS" start="2025-12-15T15:08:32.145832" elapsed="0.298369"/>
 </kw>
 <doc>Startet den Browser und öffnet die TodoMVC-Anwendung.</doc>
-<status status="PASS" start="2025-12-14T21:12:15.281065" elapsed="1.530938"/>
+<status status="PASS" start="2025-12-15T15:08:30.929511" elapsed="1.514858"/>
 </kw>
-<kw name="Neues Todo Anlegen">
+<test id="s1-s1-s1-t1" name="Neues Todo kann angelegt werden" line="16">
+<kw name="Todo Anlegen" owner="keywords" type="SETUP">
 <for flavor="IN">
 <iter>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-12-14T21:12:16.814510" level="INFO">Fills the text 'Einkaufen Gehen' in the given field.</msg>
-<arg>selector=${INPUT_NEW_TODO}</arg>
-<arg>txt=${todo}</arg>
+<msg time="2025-12-15T15:08:32.456666" level="INFO">Fills the text 'Einkaufen gehen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.813763" elapsed="0.045684"/>
+<status status="PASS" start="2025-12-15T15:08:32.456165" elapsed="0.025603"/>
 </kw>
 <kw name="Press Keys" owner="Browser">
 <arg>${INPUT_NEW_TODO}</arg>
@@ -67,20 +67,20 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given key combination into element found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.859740" elapsed="0.031282"/>
+<status status="PASS" start="2025-12-15T15:08:32.482013" elapsed="0.025709"/>
 </kw>
-<var name="${todo}">Einkaufen Gehen</var>
-<status status="PASS" start="2025-12-14T21:12:16.813441" elapsed="0.077769"/>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-12-15T15:08:32.455919" elapsed="0.051944"/>
 </iter>
 <iter>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-12-14T21:12:16.892198" level="INFO">Fills the text 'Garten Machen' in the given field.</msg>
-<arg>selector=${INPUT_NEW_TODO}</arg>
-<arg>txt=${todo}</arg>
+<msg time="2025-12-15T15:08:32.508766" level="INFO">Fills the text 'Kochen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.891662" elapsed="0.008293"/>
+<status status="PASS" start="2025-12-15T15:08:32.508273" elapsed="0.007408"/>
 </kw>
 <kw name="Press Keys" owner="Browser">
 <arg>${INPUT_NEW_TODO}</arg>
@@ -88,20 +88,20 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given key combination into element found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.900241" elapsed="0.009245"/>
+<status status="PASS" start="2025-12-15T15:08:32.515886" elapsed="0.008823"/>
 </kw>
-<var name="${todo}">Garten Machen</var>
-<status status="PASS" start="2025-12-14T21:12:16.891373" elapsed="0.018253"/>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-12-15T15:08:32.508008" elapsed="0.016844"/>
 </iter>
 <iter>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-12-14T21:12:16.910623" level="INFO">Fills the text 'Wohnung aufräumen' in the given field.</msg>
-<arg>selector=${INPUT_NEW_TODO}</arg>
-<arg>txt=${todo}</arg>
+<msg time="2025-12-15T15:08:32.525765" level="INFO">Fills the text 'Sport machen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.910069" elapsed="0.011024"/>
+<status status="PASS" start="2025-12-15T15:08:32.525277" elapsed="0.008870"/>
 </kw>
 <kw name="Press Keys" owner="Browser">
 <arg>${INPUT_NEW_TODO}</arg>
@@ -109,58 +109,532 @@
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Types the given key combination into element found by ``selector``.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.921306" elapsed="0.011672"/>
+<status status="PASS" start="2025-12-15T15:08:32.534371" elapsed="0.009211"/>
 </kw>
-<var name="${todo}">Wohnung aufräumen</var>
-<status status="PASS" start="2025-12-14T21:12:16.909770" elapsed="0.023421"/>
+<var name="${todo}">Sport machen</var>
+<status status="PASS" start="2025-12-15T15:08:32.524985" elapsed="0.018748"/>
 </iter>
 <var>${todo}</var>
 <value>@{todos}</value>
-<status status="PASS" start="2025-12-14T21:12:16.813025" elapsed="0.120231"/>
+<status status="PASS" start="2025-12-15T15:08:32.455625" elapsed="0.088172"/>
 </for>
-<arg>Einkaufen Gehen</arg>
-<arg>Garten Machen</arg>
-<arg>Wohnung aufräumen</arg>
-<doc>Legt ein neues Todo an.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.812443" elapsed="0.120917"/>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<arg>Sport machen</arg>
+<doc>Legt ein oder mehrere Todos an.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.455115" elapsed="0.088790"/>
+</kw>
+<kw name="Vorhandene Todos" owner="keywords">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.549309" level="INFO">${anzahl} = 3</msg>
+<var>${anzahl}</var>
+<arg>${TODO_ITEMS}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.544643" elapsed="0.004809"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-15T15:08:32.550122" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${anzahl}</arg>
+<arg>${erwartete_anzahl}</arg>
+<arg>msg=Erwartet waren ${erwartete_anzahl} Todos, gefunden wurden ${anzahl}.</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.549635" elapsed="0.000682"/>
+</kw>
+<arg>erwartete_anzahl=3</arg>
+<doc>Überprüft die Anzahl der vorhandenen Todos.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.544219" elapsed="0.006221"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser">
-<msg time="2025-12-14T21:12:16.986216" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-15T15:08:32.598823" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="PASS" start="2025-12-14T21:12:16.933628" elapsed="0.052829"/>
+<status status="PASS" start="2025-12-15T15:08:32.550656" elapsed="0.048400"/>
 </kw>
-<msg time="2025-12-14T21:12:17.000020" level="INFO">Switching context to context=36fb0eda-5bc5-4557-af6d-d2cb8b82c2f8 in CURRENT</msg>
-<msg time="2025-12-14T21:12:17.005738" level="INFO">Successfully changed active context: context=36fb0eda-5bc5-4557-af6d-d2cb8b82c2f8</msg>
-<msg time="2025-12-14T21:12:17.042260" level="INFO">Successfully closed Context</msg>
-<doc>Prüft die Funktionalität zum Anlegen eines neuen Todos.</doc>
-<status status="PASS" start="2025-12-14T21:12:15.278592" elapsed="1.708202"/>
+<kw name="Alle Todos Löschen" owner="keywords" type="TEARDOWN">
+<while condition="${True}">
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.604137" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.600385" elapsed="0.003909"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.604906" elapsed="0.000152"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.604585" elapsed="0.000529"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.604555" elapsed="0.000603"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.605242" elapsed="0.027932"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.633914" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.633376" elapsed="0.017448"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.599916" elapsed="0.051041"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.654849" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.651530" elapsed="0.003459"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.655509" elapsed="0.000165"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.655162" elapsed="0.000568"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.655128" elapsed="0.000645"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.655862" elapsed="0.025369"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.681983" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.681438" elapsed="0.016685"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.651010" elapsed="0.047246"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.701674" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.698703" elapsed="0.003102"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.702278" elapsed="0.000147"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.701951" elapsed="0.000528"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.701929" elapsed="0.000591"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.702635" elapsed="0.019989"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.723357" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.722830" elapsed="0.016228"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.698305" elapsed="0.040888"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.742794" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.739634" elapsed="0.003323"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="PASS" start="2025-12-15T15:08:32.743437" elapsed="0.000167"/>
+</break>
+<status status="PASS" start="2025-12-15T15:08:32.743110" elapsed="0.000551"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.743087" elapsed="0.000618"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-12-15T15:08:32.743802" elapsed="0.000171"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-12-15T15:08:32.744089" elapsed="0.000159"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.739239" elapsed="0.005085"/>
+</iter>
+<status status="PASS" start="2025-12-15T15:08:32.599915" elapsed="0.144451"/>
+</while>
+<doc>Löscht alle vorhandenen Todos durch wiederholtes Löschen des ersten Eintrags.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.599541" elapsed="0.144900"/>
+</kw>
+<doc>Legt ein neues Todo an und prüft, dass genau ein Todo vorhanden ist.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.444492" elapsed="0.300121"/>
 </test>
-<doc>Beispiel-Testsuite für TodoMVC mit Robot Framework Browser
-- Neues Todo kann angelegt werden
-- Todos können als erledigt markiert werden
-
-Testobjekt: https://todomvc.com/examples/react/dist/
-
-Keyword-Documentation:
-- Browser: https://marketsquare.github.io/robotframework-browser/Browser.html
-- BuiltIn: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html</doc>
-<status status="PASS" start="2025-12-14T21:12:15.075006" elapsed="1.968322"/>
+<test id="s1-s1-s1-t2" name="Todo kann als erledigt markiert werden" line="21">
+<kw name="Todo Anlegen" owner="keywords" type="SETUP">
+<for flavor="IN">
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-15T15:08:32.756457" level="INFO">Fills the text 'Einkaufen gehen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.755982" elapsed="0.007219"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.763427" elapsed="0.007772"/>
+</kw>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-12-15T15:08:32.755765" elapsed="0.015573"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-15T15:08:32.772246" level="INFO">Fills the text 'Kochen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.771759" elapsed="0.006553"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.778563" elapsed="0.007102"/>
+</kw>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-12-15T15:08:32.771469" elapsed="0.014331"/>
+</iter>
+<iter>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-12-15T15:08:32.786814" level="INFO">Fills the text 'Sport machen' in the given field.</msg>
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>${todo}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.786233" elapsed="0.005577"/>
+</kw>
+<kw name="Press Keys" owner="Browser">
+<arg>${INPUT_NEW_TODO}</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.792023" elapsed="0.006873"/>
+</kw>
+<var name="${todo}">Sport machen</var>
+<status status="PASS" start="2025-12-15T15:08:32.785929" elapsed="0.013104"/>
+</iter>
+<var>${todo}</var>
+<value>@{todos}</value>
+<status status="PASS" start="2025-12-15T15:08:32.755491" elapsed="0.043602"/>
+</for>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<arg>Sport machen</arg>
+<doc>Legt ein oder mehrere Todos an.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.755054" elapsed="0.044128"/>
+</kw>
+<kw name="Todo Als Erledigt Markieren" owner="keywords">
+<for flavor="IN">
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.800815" level="INFO">Clicks the element '[data-testid=todo-list] li:has-text("Einkaufen gehen") input.toggle'.</msg>
+<arg>[data-testid=todo-list] li:has-text("${todo}") input.toggle</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.800356" elapsed="0.023902"/>
+</kw>
+<var name="${todo}">Einkaufen gehen</var>
+<status status="PASS" start="2025-12-15T15:08:32.800154" elapsed="0.024241"/>
+</iter>
+<iter>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.825698" level="INFO">Clicks the element '[data-testid=todo-list] li:has-text("Kochen") input.toggle'.</msg>
+<arg>[data-testid=todo-list] li:has-text("${todo}") input.toggle</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.824862" elapsed="0.018776"/>
+</kw>
+<var name="${todo}">Kochen</var>
+<status status="PASS" start="2025-12-15T15:08:32.824520" elapsed="0.019254"/>
+</iter>
+<var>${todo}</var>
+<value>@{todos}</value>
+<status status="PASS" start="2025-12-15T15:08:32.799902" elapsed="0.043929"/>
+</for>
+<arg>Einkaufen gehen</arg>
+<arg>Kochen</arg>
+<doc>Markiert alle übergebenen Todos anhand ihres Namens als erledigt.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.799506" elapsed="0.044405"/>
+</kw>
+<kw name="Erledigte Todos" owner="keywords">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.847944" level="INFO">${anzahl} = 2</msg>
+<var>${anzahl}</var>
+<arg>${COMPLETED_TODO_ITEMS}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.844679" elapsed="0.003407"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-12-15T15:08:32.848749" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${anzahl}</arg>
+<arg>${erwartete_anzahl}</arg>
+<arg>msg=Erwartet waren ${erwartete_anzahl} erledigte Todos, gefunden wurden ${anzahl}.</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.848260" elapsed="0.000605"/>
+</kw>
+<arg>erwartete_anzahl=2</arg>
+<doc>Überprüft die Anzahl der erledigten Todos.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.844207" elapsed="0.004774"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2025-12-15T15:08:32.895379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.849247" elapsed="0.046413"/>
+</kw>
+<kw name="Alle Todos Löschen" owner="keywords" type="TEARDOWN">
+<while condition="${True}">
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.900053" level="INFO">${count} = 3</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.897265" elapsed="0.002896"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.900602" elapsed="0.000199"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.900281" elapsed="0.000599"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.900263" elapsed="0.000683"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.901049" elapsed="0.023242"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.925075" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.924520" elapsed="0.016333"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.896766" elapsed="0.044223"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.944323" level="INFO">${count} = 2</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.941437" elapsed="0.003026"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.944980" elapsed="0.000177"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.944610" elapsed="0.000601"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.944588" elapsed="0.000663"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.945354" elapsed="0.020103"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:32.966182" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.965658" elapsed="0.016482"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.941039" elapsed="0.041238"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:32.986216" level="INFO">${count} = 1</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.982723" elapsed="0.003635"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.986862" elapsed="0.000151"/>
+</break>
+<status status="NOT RUN" start="2025-12-15T15:08:32.986506" elapsed="0.000559"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:32.986485" elapsed="0.000658"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.987237" elapsed="0.020025"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-12-15T15:08:33.008057" level="INFO">Clicks the element 'css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy'.</msg>
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:33.007473" elapsed="0.016245"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:32.982324" elapsed="0.041536"/>
+</iter>
+<iter>
+<kw name="Get Element Count" owner="Browser">
+<msg time="2025-12-15T15:08:33.027703" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>css=.todo-list li</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2025-12-15T15:08:33.024332" elapsed="0.003569"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<break>
+<status status="PASS" start="2025-12-15T15:08:33.028427" elapsed="0.000215"/>
+</break>
+<status status="PASS" start="2025-12-15T15:08:33.028059" elapsed="0.000662"/>
+</branch>
+<status status="PASS" start="2025-12-15T15:08:33.028036" elapsed="0.000759"/>
+</if>
+<kw name="Hover" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Moves the virtual mouse and scrolls to the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-12-15T15:08:33.028917" elapsed="0.000201"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>css=.todo-list li &gt;&gt; nth=0 &gt;&gt; .destroy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" start="2025-12-15T15:08:33.029236" elapsed="0.000156"/>
+</kw>
+<status status="PASS" start="2025-12-15T15:08:33.023930" elapsed="0.005537"/>
+</iter>
+<status status="PASS" start="2025-12-15T15:08:32.896764" elapsed="0.132747"/>
+</while>
+<doc>Löscht alle vorhandenen Todos durch wiederholtes Löschen des ersten Eintrags.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.896273" elapsed="0.133311"/>
+</kw>
+<doc>Legt mehrere Todos an, markiert sie als erledigt und prüft die Anzahl der erledigten Todos.</doc>
+<status status="PASS" start="2025-12-15T15:08:32.750626" elapsed="0.279142"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-12-15T15:08:33.181468" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-15T15:08:33.035414" elapsed="0.146315"/>
+</kw>
+<doc>regressionstests für die TodoMVC-Anwendung.</doc>
+<status status="PASS" start="2025-12-15T15:08:30.768735" elapsed="2.413115"/>
 </suite>
-<status status="PASS" start="2025-12-14T21:12:15.069778" elapsed="1.979504"/>
+<status status="PASS" start="2025-12-15T15:08:30.765448" elapsed="2.422178"/>
 </suite>
-<status status="PASS" start="2025-12-14T21:12:15.042668" elapsed="2.014421"/>
+<status status="PASS" start="2025-12-15T15:08:30.737719" elapsed="2.451920"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Todomvc-Tutorial" id="s1" pass="1" fail="0" skip="0">Todomvc-Tutorial</stat>
-<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Todomvc-Tutorial.Tests</stat>
-<stat name="Live2" id="s1-s1-s1" pass="1" fail="0" skip="0">Todomvc-Tutorial.Tests.Live2</stat>
+<stat name="Todomvc-Tutorial" id="s1" pass="2" fail="0" skip="0">Todomvc-Tutorial</stat>
+<stat name="Tests" id="s1-s1" pass="2" fail="0" skip="0">Todomvc-Tutorial.Tests</stat>
+<stat name="Optimiert" id="s1-s1-s1" pass="2" fail="0" skip="0">Todomvc-Tutorial.Tests.Optimiert</stat>
 </suite>
 </statistics>
 <errors>

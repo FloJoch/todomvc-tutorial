@@ -10,7 +10,6 @@ Documentation       Beispiel-Testsuite für TodoMVC mit Robot Framework Browser
 ...                 - BuiltIn: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
 
 Library             Browser
-# Suite Setup    Starte Browser Und Öffne ToDoMVC
 
 
 *** Variables ***
@@ -26,13 +25,14 @@ TC1: Neues Todo kann angelegt werden
     # ---
     # Neues Todo Anlegen
     # ---
-    # Prüfe Anzahl Angelegter Todos
+    # Prüfe Anzahl Der Angelegten Todos
     # ---
     Take Screenshot
 
 TC2: Todo kann als erledigt markiert werden
     [Documentation]    Prüft die Funktionalität ein Todo als erledigt zu markieren.
     Starte Browser Und Öffne ToDoMVC
+    # Neues Todo Anlegen
     # ---
     # Todo Als Erledigt Markieren
     # ---
@@ -51,19 +51,19 @@ Starte Browser Und Öffne ToDoMVC
 Neues Todo Anlegen
     [Documentation]    Legt ein neues Todo an.
     [Arguments]    @{todos}
-    Log    tbd
-
-Vorhandene Todos
-    [Documentation]    xx
-    [Arguments]    ${erwartete_anzahl}
-    Log    tbd
+    Log    TBA
 
 Prüfe Anzahl Der Angelegten Todos
-    [Documentation]    [data-testid=todo-list] li:has-text("${todo}") input.toggle
+    [Documentation]    xx
+    [Arguments]    ${erwartete_anzahl}
+    Log    TBA
+
+Todo Als Erledigt Markieren
+    [Documentation]    xx
     [Arguments]    @{todos}
-    Log    tbd
+    Log    TBA
 
 Prüfe Anzahl Erledigter Todos
     [Documentation]    xx
     [Arguments]    ${erwarteten_anzahl}
-    Log    tbd
+    Log    TBA
