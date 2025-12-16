@@ -1,13 +1,12 @@
 *** Settings ***
 Documentation       Beispiel-Testsuite für TodoMVC mit Robot Framework Browser
-...                 - Neues Todo kann angelegt werden
-...                 - Todos können als erledigt markiert werden
 ...
 ...                 Testobjekt: https://todomvc.com/examples/react/dist/
 ...
 ...                 Keyword-Documentation:
 ...                 - Browser: https://marketsquare.github.io/robotframework-browser/Browser.html
 ...                 - BuiltIn: https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+...
 
 Library             Browser
 
@@ -23,9 +22,9 @@ TC1: Neues Todo kann angelegt werden
     [Documentation]    Prüft die Funktionalität zum Anlegen eines neuen Todos.
     Starte Browser Und Öffne ToDoMVC
     # ---
-    # Neues Todo Anlegen
+    # Neues Todo anlegen
     # ---
-    # Prüfe Anzahl Der Angelegten Todos
+    # Prüfe Anzahl Angelegter Todos
     # ---
     Take Screenshot
 
@@ -51,9 +50,12 @@ Starte Browser Und Öffne ToDoMVC
 Neues Todo Anlegen
     [Documentation]    Legt ein neues Todo an.
     [Arguments]    @{todos}
-    Log    TBA
+    FOR    ${todo}    IN    @{todos}
+        Fill Text    ${INPUT_NEW_TODO}    ${todo}
+        Press Keys    ${INPUT_NEW_TODO}    Enter
+    END
 
-Prüfe Anzahl Der Angelegten Todos
+Prüfe Anzahl Angelegter Todo
     [Documentation]    xx
     [Arguments]    ${erwartete_anzahl}
     Log    TBA

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       regressionstests für die TodoMVC-Anwendung.
+Documentation       Regressionstests für die TodoMVC-Anwendung.
 
 Resource            ${EXECDIR}/resources/keywords/keywords.resource
 
